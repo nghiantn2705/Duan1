@@ -6,20 +6,20 @@ if(isset($_GET['act'])){
     $act = $_GET['act'];
     switch($act){
         case 'adddm':
-            include "danhmuc/add.php";
+            include "../danhmuc/add.php";
             break;
         case 'listdm':
-            include "danhmuc/list.php";
+            include "../danhmuc/list.php";
             break;
         
             
         default:
-            include "view/home.php";
+            include "../view/home.php";
             break;
     }
 }
 else{
     include "view/home.php";
 }
-include "view/footer.php";
+include "../view/footer.php";
 ?>
