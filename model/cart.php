@@ -29,13 +29,13 @@ function viewCart($del)
     $moneyy = $cart[3] * $cart[4];
     $tong += $moneyy;
     if ($del == 1) {
-      $deleteProduct_td = '<a href="index.php?act=deleteCart&idCart=' . $i . '"><input type="button" value="Delete"></a>';
+      $deleteProduct_td = '<a href="index.php?act=deleteCart&idCart=' . $i . '"><input class="btn btn-danger" type="button" value="Delete"></a>';
     } else {
       $deleteProduct_td = '';
     }
     echo '
               <tbody>            
-                            <tr class="text-center">
+                            <tr class="text-center align-middle" >
                               <td ><img src="' . $image . '" alt="" class="cart-img"></td>
                               <td >' . $cart[1] . '</td>
                               <td >' . $cart[3] . '</td>

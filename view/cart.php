@@ -12,19 +12,22 @@
         </div>
             
         <div class="mb bill text-center">
-
+        <?php 
+                            if(isset($_SESSION['user'])){
+                        ?>
                             <a class="mr" href="index.php?act=bill">
                             <input type="button" class="btn btn-success" value="TIẾP TỤC ĐẶT HÀNG">
                             </a>
                             <a href="index.php?act=deleteCart">
                                 <input type="button" class="btn btn-success" value="XÓA GIỎ HÀNG">
                             </a>
-                        </form>                
+                        </form>      
+                        <?php
+                            }else{ 
+                        ?>
+                            <h1 style="color: red; text-align: center;">Vui lòng đăng nhập để tiếp tục đặt hàng!</h1>         
+                        <?php } ?>          
         </div>
     </div>
     
 </div>
-
-
-
-
