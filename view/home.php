@@ -30,6 +30,11 @@
     <a href=""><img src="view/img/banner/banner-icon-4.png" alt=""></a>
     <a href=""><img src="view/img/banner/banner-icon-5.png" alt=""></a>
   </div>
+  <div class="thongbao">
+    <?php if(isset($_SESSION['message'])){
+      echo $_SESSION['message'];
+    } ?>
+  </div>
   <!--End Banner-->
   <!--Product-->
     <div class="product">
