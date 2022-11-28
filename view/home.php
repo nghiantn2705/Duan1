@@ -30,12 +30,17 @@
     <a href=""><img src="view/img/banner/banner-icon-4.png" alt=""></a>
     <a href=""><img src="view/img/banner/banner-icon-5.png" alt=""></a>
   </div>
+  <div class="thongbao">
+    <?php if(isset($_SESSION['message'])){
+      echo $_SESSION['message'];
+    } ?>
+  </div>
   <!--End Banner-->
   <!--Product-->
     <div class="product">
 
       <div class="swiper mySwiper1">
-        <h3 >Sản Phẩm Bán Chạy</h3>
+        <h3>Sản Phẩm Bán Chạy</h3>
         <div class="swiper-wrapper">
           <?php foreach($listproducts as $prodcuts){
             extract($prodcuts);
@@ -46,7 +51,7 @@
                                 $image = "No Photo";
                             }
            ?>
-          <div class="swiper-slide" id="parent-product">
+          <a href="index.php?act=chitiet&&id=<?php echo $product_id ?>"><div class="swiper-slide" id="parent-product">
             <img src="" alt="">
           <span><?= $image ?></span>
           <div id="item-product">
@@ -63,13 +68,13 @@
             <input type="number" hidden name="product_price" value="<?= $product_price ?>">
             <input type="submit" class="product-btn-cart" style="width:250px ;" name="addtocart" value="Mua ngay"></input>
           </form>
-        </div>
+        </div></a>
          <?php } ?>
         </div>
         <div class="swiper-pagination"></div>
       </div>
       <div class="swiper mySwiper">
-        <h3>Sản Phẩm Mới</h3>
+        <h3>Sản Phẩm Bán Chạy</h3>
         <div class="swiper-wrapper">
           <?php foreach($listproducts as $prodcuts){
             extract($prodcuts);
@@ -80,7 +85,7 @@
                                 $image = "No Photo";
                             }
            ?>
-          <div class="swiper-slide" id="parent-product">
+          <a href="index.php?act=chitiet&&id=<?php echo $product_id ?>"><div class="swiper-slide" id="parent-product">
             <img src="" alt="">
           <span><?= $image ?></span>
           <div id="item-product">
@@ -97,13 +102,13 @@
             <input type="number" hidden name="product_price" value="<?= $product_price ?>">
             <input type="submit" class="product-btn-cart" style="width:250px ;" name="addtocart" value="Mua ngay"></input>
           </form>
-        </div>
+        </div></a>
          <?php } ?>
         </div>
         <div class="swiper-pagination"></div>
       </div>
       <div class="swiper mySwiper">
-        <h3>Tất cả sản phẩm</h3>
+        <h3>Sản Phẩm Bán Chạy</h3>
         <div class="swiper-wrapper">
           <?php foreach($listproducts as $prodcuts){
             extract($prodcuts);
@@ -114,7 +119,7 @@
                                 $image = "No Photo";
                             }
            ?>
-          <div class="swiper-slide" id="parent-product">
+          <a href="index.php?act=chitiet&&id=<?php echo $product_id ?>"><div class="swiper-slide" id="parent-product">
             <img src="" alt="">
           <span><?= $image ?></span>
           <div id="item-product">
@@ -131,7 +136,7 @@
             <input type="number" hidden name="product_price" value="<?= $product_price ?>">
             <input type="submit" class="product-btn-cart" style="width:250px ;" name="addtocart" value="Mua ngay"></input>
           </form>
-        </div>
+        </div></a>
          <?php } ?>
         </div>
         <div class="swiper-pagination"></div>
