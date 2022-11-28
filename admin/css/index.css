@@ -13,20 +13,13 @@
     background-color: #4A4A4A;
     height: 100%;
     text-align: center;
-<<<<<<< HEAD
-=======
-    margin-top: -10px;
->>>>>>> ae280b10c18eb087c13f45af315097256ef30a9b
 }
 
 a {
     text-decoration: none;
     list-style: none;
     font-weight: 600;
-<<<<<<< HEAD
     color: #ffffff;
-=======
->>>>>>> ae280b10c18eb087c13f45af315097256ef30a9b
 }
 
 a:hover {
@@ -35,25 +28,13 @@ a:hover {
 
 li {
     display: inline-block;
-<<<<<<< HEAD
     background-color: #ffffff;
     border-radius: 5px;
     margin: 12px 5px;
-=======
-    width: 160px;
-    height: 42px;
-    background-color: #ffffff;
-    border-radius: 5px;
-    margin: 12px 0;
->>>>>>> ae280b10c18eb087c13f45af315097256ef30a9b
     padding-top: 13px;
     color: #4A4A4A;
 }
 
 img {
     width: 100%;
-<<<<<<< HEAD
-=======
-    height: 300px;
->>>>>>> ae280b10c18eb087c13f45af315097256ef30a9b
 }
