@@ -11,8 +11,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="view/css/index.css">
-
+  <link rel="stylesheet" href="view/css/index1.css">
+<link rel="stylesheet" href="view/css/chitiet.css">
 </head>
 
 <body>
@@ -79,7 +79,7 @@
      
       <div class="login-user">
       
-       <?php if(isset($_SESSION['user'])){
+       <?php @session_start(); if(isset($_SESSION['user'])){
         echo" <h4>Xin chào</h4>
         <ul>
         <li><a href='index.php?act=logout'>Đăng xuất</a></li>
@@ -95,7 +95,7 @@
           <input type='password' placeholder='Nhập mật khẩu' name='password'>
           <div>
             <button type='submit'>Đăng Nhập</button>
-            <a href='index.php?act=dangky'>Đăng ký</a>
+            <a href='index.php?act=form'>Đăng ký</a>
           </div>
         </form>
         <div class='login-gg-fb'>
@@ -112,10 +112,6 @@
         ";
         
        }?>
-      
-       
-        
-        
         <img id="close" src="view/img/item/close.png" alt="">
       </div>
       <div class="Shopping-cart">
