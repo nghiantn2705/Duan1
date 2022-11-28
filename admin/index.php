@@ -1,8 +1,18 @@
 <?php
 include "../model/pdo.php";
+<<<<<<< HEAD
 include "../model/categorys.php";
 include "../model/product.php";
 include "../model/user.php";
+=======
+
+include "../model/categorys.php";
+include "../model/product.php";
+include "../model/user.php";
+
+
+
+>>>>>>> ae280b10c18eb087c13f45af315097256ef30a9b
 include "./header.php";
 
 // Controller
