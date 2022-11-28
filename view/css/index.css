@@ -395,6 +395,7 @@ li{
         transform: translateY(-10px);
         transition: all 0.6s ease-in-out;
       }
+    
       .Shopping-cart{
         height: 100%;
         width: 400px;

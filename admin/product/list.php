@@ -1,13 +1,13 @@
-<div class="row">
-    <div class="row frmtitle mb">
+<div class="container">
+    <div class="frmtitle mb text-center">
         <h1>DANH SÁCH LOẠI HÀNG HÓA</h1>
     </div>
    
-    <div class="row frmcontent">
-        <form action="#" method="post">
-            <div class="row mb10 frmdsloai">
+    <div class="frmcontent">
+        <form action="#" method="post" class="align-middle">
+            <div class=" mb10 frmdsloai ">
 
-                <table border="1">
+                <table class="table table-striped table-striped-columns table-hover table-bordered">
                     <thead>
                         <tr>
                             <th>a</th>
@@ -31,7 +31,7 @@
                             <th>active</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="align-middle">
                         <?php
                         foreach ($listproducts as $products) {
                             extract($products);
@@ -64,19 +64,20 @@
                                 <td><?= $product_comment ?></td>
 
                                 <td>
-                                    <a href="<?= $updatesp ?>"><input type="button" value="Sửa"></a>
-                                    <a href="<?= $deletesp ?>" onclick="return confirm('Bạn có chắc chắn muốn xóa?')"><input type="button" value="Xóa"></a>
+                                    <a href="<?= $updatesp ?>"><input type="button" class="btn btn-danger my-3" value="Sửa"></a>
+                                    <a href="<?= $deletesp ?>"  onclick="return confirm('Bạn có chắc chắn muốn xóa?')"><input class="btn btn-danger" type="button" value="Xóa"></a>
                                 </td>
                             </tr>
                         <?php } ?>
                     </tbody>
                 </table>
             </div>
-            <div class="row mb10">
-                <input type="button" value="Chọn tất cả">
-                <input type="button" value="Bỏ chọn tất cả">
-                <input type="button" value="Xóa các mục tất tả">
-                <a href="index.php?act=add-products"><input type="button" value="Thêm mới"></a>
+            <div class=" mb10 text-center">
+                <input type="button" class="btn btn-success" value="Chọn tất cả">
+                <input type="button" class="btn btn-success" value="Bỏ chọn tất cả">
+                <a href="index.php?act=add-products"><input class="btn btn-success" type="button" value="Thêm mới"></a>
+                <input type="button" class="btn btn-success" value="Xóa các mục tất tả">
+              
             </div>
         </form>
     </div>
