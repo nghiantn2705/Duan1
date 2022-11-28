@@ -35,7 +35,7 @@
     <div class="product">
 
       <div class="swiper mySwiper1">
-        <h3>Sản Phẩm Bán Chạy</h3>
+        <h3 >Sản Phẩm Bán Chạy</h3>
         <div class="swiper-wrapper">
           <?php foreach($listproducts as $prodcuts){
             extract($prodcuts);
@@ -69,7 +69,7 @@
         <div class="swiper-pagination"></div>
       </div>
       <div class="swiper mySwiper">
-        <h3>Sản Phẩm Bán Chạy</h3>
+        <h3>Sản Phẩm Mới</h3>
         <div class="swiper-wrapper">
           <?php foreach($listproducts as $prodcuts){
             extract($prodcuts);
@@ -103,7 +103,7 @@
         <div class="swiper-pagination"></div>
       </div>
       <div class="swiper mySwiper">
-        <h3>Sản Phẩm Bán Chạy</h3>
+        <h3>Tất cả sản phẩm</h3>
         <div class="swiper-wrapper">
           <?php foreach($listproducts as $prodcuts){
             extract($prodcuts);
