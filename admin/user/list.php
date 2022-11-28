@@ -1,9 +1,9 @@
 <div class="">
     <div class=" frmtitle mb">
-        <h1>DANH SÁCH LNGƯỜI DÙNG</h1>
+        <h1 class="text-center">DANH SÁCH NGƯỜI DÙNG</h1>
     </div>
    
-    <div class="frmcontent">
+    <div class="frmcontent container">
         <form action="#" method="post">
             <div class=" mb10 frmdsloai">
 
@@ -61,20 +61,20 @@
                                 <td><?= $product_insurance ?></td>
                                 <td><?= $product_comment ?></td> -->
 
-                                <td>
-                                    <a href="<?= $update_users ?>"><input type="button" class="btn btn-danger my-3" value="Sửa"></a>
-                                    <a href="<?= $delete_users ?>" onclick="return confirm('Bạn có chắc chắn muốn xóa?')"><input class="btn btn-danger my-3" type="button" value="Xóa"></a>
+                                <td class="text-center">
+                                    <a href="<?= $update_users ?>"><input type="button" class="btn btn-danger" value="Sửa"></a>
+                                    <a href="<?= $delete_users ?>"  onclick="return confirm('Bạn có chắc chắn muốn xóa?')"><input class="btn btn-danger " type="button" value="Xóa"></a>
                                 </td>
                             </tr>
                         <?php } ?>
                     </tbody>
                 </table>
             </div>
-            <div class=" mb10">
-                <input type="button" value="Chọn tất cả">
-                <input type="button" value="Bỏ chọn tất cả">
-                <input type="button" value="Xóa các mục tất tả">
-                <a href="index.php?act=add-products"><input type="button" value="Thêm mới"></a>
+            <div class=" mb10 text-center">
+                <input type="button" class="btn btn-success" value="Chọn tất cả">
+                <input type="button" class="btn btn-success" value="Bỏ chọn tất cả">
+                <input type="button" class="btn btn-success" value="Xóa các mục tất tả">
+                <a href="index.php?act=add-products"><input class="btn btn-success" type="button" value="Thêm mới"></a>
             </div>
         </form>
     </div>
