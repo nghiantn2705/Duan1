@@ -1,13 +1,13 @@
-<div class="row">
-    <div class="row frmtitle mb">
-        <h1>DANH SÁCH LNGƯỜI DÙNG</h1>
+<div class="">
+    <div class=" frmtitle mb">
+        <h1 class="text-center">DANH SÁCH NGƯỜI DÙNG</h1>
     </div>
    
-    <div class="row frmcontent">
+    <div class="frmcontent container">
         <form action="#" method="post">
-            <div class="row mb10 frmdsloai">
+            <div class=" mb10 frmdsloai">
 
-                <table border="1">
+                <table class="table table-striped table-striped-columns table-hover table-bordered">
                     <thead>
                         <tr>
                             <th></th>
@@ -49,35 +49,32 @@
                                 <td><input type="checkbox" name="" id=""></td>
                                 <td><?= $user_id ?></td>
                                 <td><?= $user_name ?></td>
-                                <td><?= $user_password ?></td>
-                                
-                                <td><?= $user_image ?></td>
-                                
-                                <td><?= $user_lastname ?></td>
-                                
+                                <td><?= $user_password ?></td>          
+                                <td><?= $user_image ?></td>                        
+                                <td><?= $user_name ?></td>
                                 <td><?= $user_address ?></td>
                                 <td><?= $user_phone ?></td>
                                 <td><?= $user_email ?></td>
-                                <td><?= $user_rolex	?></td>
+                                <td><?= $user_vaitro	?></td>
                                 <!-- <td><?= $product_wire ?></td>
                                 <td><?= $product_origin ?></td>
                                 <td><?= $product_insurance ?></td>
                                 <td><?= $product_comment ?></td> -->
 
-                                <td>
-                                    <a href="<?= $update_users ?>"><input type="button" value="Sửa"></a>
-                                    <a href="<?= $delete_users ?>" onclick="return confirm('Bạn có chắc chắn muốn xóa?')"><input type="button" value="Xóa"></a>
+                                <td class="text-center">
+                                    <a href="<?= $update_users ?>"><input type="button" class="btn btn-danger" value="Sửa"></a>
+                                    <a href="<?= $delete_users ?>"  onclick="return confirm('Bạn có chắc chắn muốn xóa?')"><input class="btn btn-danger " type="button" value="Xóa"></a>
                                 </td>
                             </tr>
                         <?php } ?>
                     </tbody>
                 </table>
             </div>
-            <div class="row mb10">
-                <input type="button" value="Chọn tất cả">
-                <input type="button" value="Bỏ chọn tất cả">
-                <input type="button" value="Xóa các mục tất tả">
-                <a href="index.php?act=add-products"><input type="button" value="Thêm mới"></a>
+            <div class=" mb10 text-center">
+                <input type="button" class="btn btn-success" value="Chọn tất cả">
+                <input type="button" class="btn btn-success" value="Bỏ chọn tất cả">
+                <input type="button" class="btn btn-success" value="Xóa các mục tất tả">
+                <a href="index.php?act=add-products"><input class="btn btn-success" type="button" value="Thêm mới"></a>
             </div>
         </form>
     </div>
