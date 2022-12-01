@@ -20,12 +20,12 @@
   </div>
 </div>
 <div class="banner-icon">
-  <a href=""><img src="view/img/banner/banner-icon.png" alt=""></a>
-  <a href=""><img src="view/img/banner/banner-icon-1.png" alt=""></a>
-  <a href=""><img src="view/img/banner/banner-icon-2.png" alt=""></a>
-  <a href=""><img src="view/img/banner/banner-icon-3.png" alt=""></a>
-  <a href=""><img src="view/img/banner/banner-icon-4.png" alt=""></a>
-  <a href=""><img src="view/img/banner/banner-icon-5.png" alt=""></a>
+  <a href=""><img src="view/img/banner/icon.png" alt=""></a>
+  <a href=""><img src="view/img/banner/icon-1.png" alt=""></a>
+  <a href=""><img src="view/img/banner/icon-2.png" alt=""></a>
+  <a href=""><img src="view/img/banner/icon-3.png" alt=""></a>
+  <a href=""><img src="view/img/banner/icon-4.png" alt=""></a>
+  <a href=""><img src="view/img/banner/icon-5.png" alt=""></a>
 </div>
 <!--End Banner-->
 <!--Product-->
@@ -97,11 +97,12 @@
         </div>
       <?php } ?>
     </div>
-    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
   </div>
   <div class="swiper mySwiper">
     <h3>Sản Phẩm Bán Chạy</h3>
-    <div class="swiper-wrapper">
+    <div class="swiper-wrapper ">
       <?php foreach ($listproducts as $prodcuts) {
         extract($prodcuts);
         $hinhpath = "upload/" . $product_image;
@@ -111,7 +112,7 @@
           $image = "No Photo";
         }
       ?>
-        <div class="swiper-slide" id="parent-product">
+        <div class="swiper-slide " id="parent-product">
           <img src="" alt="">
           <span><?= $image ?></span>
           <div id="item-product">
@@ -131,7 +132,8 @@
         </div>
       <?php } ?>
     </div>
-    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
   </div>
   <div class="swiper mySwiper">
     <h3>Tất cả sản phẩm</h3>
@@ -165,11 +167,13 @@
         </div>
       <?php } ?>
     </div>
-    <p class="btn-collapse">
+   <div class="d-flex justify-content-center">
+   <p class="btn-collapse ">
       <a  type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
         xem thêm
         <i class="fa-solid fa-arrow-right"></i></a>
     </p>
+   </div>
   </div>
 </div>
 </div>

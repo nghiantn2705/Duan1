@@ -34,7 +34,7 @@
                             <th>Xuất Xứ</th>
                             <th>Bảo Hành</th>
                             <th>commnet</th>
-                            <th>active</th>
+                            <th>action</th>
                         </tr>
                     </thead>
                     <tbody class="align-middle text-center">
