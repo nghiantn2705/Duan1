@@ -1,9 +1,16 @@
 <div class="container">
-    <div class="frmtitle text-center">
+    <div class="frmtitle my-4 text-center">
         <h1>DANH SÁCH LOẠI HÀNG HÓA</h1>
     </div>
-    <div class=" frmcontent">
+    <div class="">
         <form action="" method="post">
+            <div class="mb10 text-center mb-4 ">
+                <input type="button" class="btn btn-success" value="Chọn tất cả">
+                <input type="button" class="btn btn-success" value="Bỏ chọn tất cả">
+                <a href="index.php?act=add-categorys"><input  class="btn btn-success" type="button" value="Thêm mới"></a>
+                <input type="button" class="btn btn-success" value="Xóa các mục tất tả">
+                
+            </div>
             <div class=" mb10 frmdsloai">
                 <table class="table table-striped table-striped-columns table-hover table-bordered">
                     <thead class="text-center">
@@ -34,13 +41,8 @@
                     </tbody>
                 </table>
             </div>
-            <div class="mb10 text-center mb-5">
-                <input type="button" class="btn btn-success" value="Chọn tất cả">
-                <input type="button" class="btn btn-success" value="Bỏ chọn tất cả">
-                <a href="index.php?act=add-categorys"><input  class="btn btn-success" type="button" value="Thêm mới"></a>
-                <input type="button" class="btn btn-success" value="Xóa các mục tất tả">
-                
-            </div>
+            
         </form>
     </div>
+</div>
 </div>
