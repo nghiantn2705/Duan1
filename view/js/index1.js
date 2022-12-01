@@ -44,24 +44,20 @@ $(document).ready(function () {
     const backdrop = document.querySelector(".backdrop");
     backdrop.style.display = "block";
   })
-  $("#nav-shopping").click(function () {
-    const Shoppingcart = document.querySelector(".Shopping-cart");
-    Shoppingcart.style.display = "flex";
-    const backdropshopping = document.querySelector(".backdrop-shopping");
-    backdropshopping.style.display = "block";
-    renderCart()
-  })
+  
   $("#close").click(function () {
     const loginuser = document.querySelector(".login-user");
     loginuser.style.display = "none";
     const backdrop = document.querySelector(".backdrop");
     backdrop.style.display = "none";
   })
-  $("#close-1").click(function () {
-    const Shoppingcart = document.querySelector(".Shopping-cart");
-    Shoppingcart.style.display = "none";
-    const backdropshopping = document.querySelector(".backdrop-shopping");
-    backdropshopping.style.display = "none";
+  $("btn-collapse").click(function () {
+    const collapse1 = document.querySelector(".collapse-show");
+    if(collapse1.style.height === '1000.38px'){
+      collapse1.style.height = '100%';
+    }else{
+      collapse1.style.height === '1000.38px';
+    }
   })
 
 

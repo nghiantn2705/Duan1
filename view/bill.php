@@ -1,7 +1,6 @@
 <div class=" mb">
     <div class="boxtrai mr">
-     <?php @session_start();?>
-        <form action="index.php?act=billcomfirm" method="post" enctype="multipart/form-data">
+        <form action="index.php?act=billcomfirm" method="post" >
             <div class=" mb">
                 <div class="boxtitle text-center "><h2>THÔNG TIN ĐẶT HÀNG</h2></div>
                 <div class=" boxcontent billform">
@@ -64,7 +63,7 @@
                     <div class=" boxcontent cart">
                         <table class="table table-striped table-striped-columns table-hover table-bordered" >
                             <?php 
-                              viewCart(0);    
+                              viewCart(0);
                             ?>
                       </table>
                       </div>

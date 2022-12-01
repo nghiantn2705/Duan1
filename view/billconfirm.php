@@ -1,6 +1,5 @@
 <div class=" mb">
     <div class="boxtrai mr">
-
         <div class=" mb">
             <div class="boxcontent" style="text-align:center">
                 <h2>Cảm ơn quý khách đã đặt hàng!</h2>

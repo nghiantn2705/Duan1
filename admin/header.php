@@ -12,19 +12,24 @@
   <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-   
-    <div class="boxcenter">
-       
-        <img src="../upload/banner-3.jpg" alt="">
-
-        <div class="sideNav align-middle">
-            <ul>
-                <li class="btn btn-secondary"><a href="../index.php" >Trang chủ</a></li>
+    <div class="header">
+      <div class="sideNav align-middle ">
+            <img src="../view/img/logo-icon.png" alt="">
+            <hr>
+            <ul class="d-flex flex flex-column align-middle ">
+                <li class="btn btn-secondary "><a href="../index.php" >Trang chủ</a></li>
                 <li class="btn btn-secondary"><a href="index.php?act=list-categorys">Danh mục</a></li>
-                <li class="btn btn-secondary"><a href="index.php?act=list-products">Hành hóa</a></li>
+                <li class="btn btn-secondary"><a href="index.php?act=list-products">Hàng hóa</a></li>
                 <li class="btn btn-secondary"><a href="index.php?act=list-users">Khách hàng</a></li>
                 <li class="btn btn-secondary"><a href="index.php?act=dsbl">Bình luận</a></li>
                 <li class="btn btn-secondary"><a href="index.php?act=thongke">Thống kê</a></li>
                 <li class="btn btn-secondary"><a href="index.php?act=listbill">Danh sách đơn hàng</a></li>
             </ul>
         </div>
+        <div class="boxcenter">
+       
+        <img src="../view/img/banner/banner-3.jpg" class=" "alt="">
+   
+    
+
+        

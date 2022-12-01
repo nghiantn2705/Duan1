@@ -4,7 +4,6 @@ include "../model/pdo.php";
 include "../model/categorys.php";
 include "../model/product.php";
 include "../model/user.php";
-include "../model/bill.php";
 
 
 
@@ -180,16 +179,10 @@ if (isset($_GET['act'])) {
 
         case 'delete_users':
             if (isset($_GET['user_id']) && ($_GET['user_id'] > 0)) {
-                delete_users($_GET['user_id']);
+                delete_user($_GET['user_id']);
             }
             $listusers = loadall_users();
             include "user/list.php";
-            break;
-
-        // Quản lí đơn hàng
-        case 'list_bill':
-            $list_bill = loadall_bill();
-            include "bill/list.php";
             break;
     }
 } else {

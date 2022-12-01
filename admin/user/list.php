@@ -1,14 +1,18 @@
 <div class="">
     <div class=" frmtitle mb">
-        <h1 class="text-center">DANH SÁCH NGƯỜI DÙNG</h1>
+        <h1 class="text-center my-3">DANH SÁCH NGƯỜI DÙNG</h1>
     </div>
    
-    <div class="frmcontent container">
+    <div class=" container">
         <form action="#" method="post">
             <div class=" mb10 frmdsloai">
-
+            <div class=" mb-4 text-center">
+                <input type="button" class="btn btn-success" value="Chọn tất cả">
+                <input type="button" class="btn btn-success" value="Bỏ chọn tất cả">
+                <input type="button" class="btn btn-success" value="Xóa các mục tất tả">
+            </div>
                 <table class="table table-striped table-striped-columns table-hover table-bordered">
-                    <thead>
+                    <thead class="text-center">
                         <tr>
                             <th></th>
                             <th>ID</th>
@@ -32,7 +36,7 @@
                             <th>active</th> -->
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="text-center">
                         <?php
                         foreach ($listusers as $users) {
                             extract($users);
@@ -70,12 +74,8 @@
                     </tbody>
                 </table>
             </div>
-            <div class=" mb10 text-center">
-                <input type="button" class="btn btn-success" value="Chọn tất cả">
-                <input type="button" class="btn btn-success" value="Bỏ chọn tất cả">
-                <input type="button" class="btn btn-success" value="Xóa các mục tất tả">
-                <a href="index.php?act=add-products"><input class="btn btn-success" type="button" value="Thêm mới"></a>
-            </div>
+            
         </form>
     </div>
+</div>
 </div>
