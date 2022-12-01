@@ -28,6 +28,7 @@
                             <th>Email
                             
                             <th>Vai trò</th>
+                            <th>action</th>
                             <!-- <th>Loại Máy</th>
                             <th>Chống Nước</th>
                             <th>Xuất Xứ</th>

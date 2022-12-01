@@ -17,8 +17,8 @@
                         <tr>
                             <th></th>
                             <th>MÃ LOẠI</th>
-                            <th>TÊN LOẠI
-                            <th>
+                            <th>TÊN LOẠI</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody class="text-center">

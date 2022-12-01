@@ -306,11 +306,18 @@ li{
         justify-content: space-between;
         align-items: center;
         margin-top: 60px;
+        
     }
+    .banner-icon img{
+        height: 85px;
+        width: 185px;
+        
+    }
+   
     .product{
         margin-top: 50px;
         width: 100%;
-        margin-bottom: 100px;
+        
     }
     .swiper{
         width: 100%;
@@ -429,12 +436,33 @@ li{
         transition: all 0.5s ease-in-out;
       }
       .collapse-product:hover .product-btn-cart{
-        transform: translateY(-10px);
+        transform: translateY(-10px);   
         transition: all 0.6s ease-in-out;
       }
       .btn-collapse{
-        text-align: right;
-        padding-right: 30px;
+        text-align: center;
+        border: 1px solid #6C7A89;
+        height: 50px;
+        width: 400px;
+        padding-top: 13px;
+        border-radius: 16px;
+      }
+      .btn-collapse a{
+        text-transform: uppercase;
+        margin-right: 5px;
+    }
+    .btn-collapse a:hover {
+        color: #fff;
+      }
+      .btn-collapse:hover a{
+        border-bottom: 1px solid #6C7A89;
+        cursor: pointer;
+        color: #fff;
+      }
+      .btn-collapse:hover {
+        border-bottom: 1px solid #6C7A89;
+        cursor: pointer;
+        background-color: #293462;
       }
    .dangky{
     display: flex;

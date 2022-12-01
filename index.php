@@ -98,11 +98,6 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             break;
         case 'billcomfirm':
             if (isset($_POST['dongydathang']) && ($_POST['dongydathang'])) {
-                if(isset($_SESSION['user'])) 
-                    {
-                        $iduser=$_SESSION['user']['user_id'];
-                    }
-                else $id=0;
                 // if(isset($_SESSION['users'])) {$iduser = $_SESSION['user']['user_id'];}
                 $user_name = $_POST['user_name'];
                 $user_email = $_POST['user_email'];
@@ -111,13 +106,12 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $pttt = $_POST['pttt'];
                 $tongdonhang = tongdonhang();
                 // Tạo bill
-                $idbill = insert_bill($iduser,$user_name, $user_email, $user_address, $user_phone, $pttt, $tongdonhang);
+                $idbill = insert_bill($user_name, $user_email, $user_address, $user_phone, $pttt, $tongdonhang);
                 // var_dump($idbill);die;
                 // Insert into cart: $session['mycart'] $idbill
 
                 foreach ($_SESSION['mycart'] as $cart) {
                     insert_cart($_SESSION['user'], $cart[0], $cart[2], $cart[1], $cart[3], $cart[4], $cart[5], $idbill);
-                    print_r($cart[0]);
                 }
                 // Xóa session cart
                 $_SESSION['cart'] = [];
