@@ -10,19 +10,20 @@ include "view/header.php";
 if (!isset($_SESSION['mycart'])) $_SESSION['mycart'] = [];
 
 $listproducts =  loadall_product();
+$dstop10=loadall_sanpham_top10();
 if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
 
 
         case 'dangky':
-            if (isset($_POST['addtocart'])) {
+            if (isset($_POST['dangky'])) {
                 if ($_POST['password'] == $_POST['re-pass']) {
                     adduser($_POST['username'], $_POST['password'], $_POST['email'], $_POST['phone'], $_FILES['file']['name'], $_POST['adr'], $_POST['vaitro'], $_FILES['file']['tmp_name']);
                     //  echo $_SESSION['thanhcong']="oke";
                     include "view/home.php";
                 } else {
-                    echo "loi mat khau";
+                    
                 }
             }
             include "./view/taikhoan/dangky.php";
@@ -107,12 +108,11 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $tongdonhang = tongdonhang();
                 // Tạo bill
                 $idbill = insert_bill($user_name, $user_email, $user_address, $user_phone, $pttt, $tongdonhang);
-
+                // var_dump($idbill);die;
                 // Insert into cart: $session['mycart'] $idbill
 
                 foreach ($_SESSION['mycart'] as $cart) {
                     insert_cart($_SESSION['user'], $cart[0], $cart[2], $cart[1], $cart[3], $cart[4], $cart[5], $idbill);
-                    print_r($cart[0]);
                 }
                 // Xóa session cart
                 $_SESSION['cart'] = [];
@@ -122,6 +122,10 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
 
             include "view/billconfirm.php";
             break;
+            case 'mybill':
+                $listbill=loadall_bill($_SESSION['user']['user_id']);
+                include "view/mybill.php";
+                break;
         default:
             include "view/home.php";
             break;

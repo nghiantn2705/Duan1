@@ -81,7 +81,7 @@ function bill_chi_tiet($listbill){
             <tbody>              
                             <tr class="text-center">
                               <td><img class="cart-img" src="'  . $image . '" alt=""></td>
-                              <td class="align-middle">' . $cart['cart_product'] . '</td>
+                              <td class="align-middle">' . $cart['cart_name'] . '</td>
                               <td class="align-middle">' . $cart['cart_price'] . '</td>
                               <td class="align-middle">' . $cart['cart_money'] . '</td>
                             </tr>  
@@ -123,7 +123,7 @@ function loadone_bill($idbill){
   return $bill;
 }
 function loadall_cart($idbill){
-  $sql = "select * from cart where cart_id =".$idbill;
+  $sql = "select * from cart where cart_bill =".$idbill;
   $bill=pdo_query($sql);
   return $bill;
 }

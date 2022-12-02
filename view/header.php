@@ -37,7 +37,8 @@
             <i class="fa-solid fa-user" id="nav-item-user"></i>
           </li>
           <li class="nav-item">
-            <i class="fa-solid fa-cart-shopping" id="nav-shopping"></i>
+            <!-- <i class="fa-solid fa-cart-shopping" id="nav-shopping"></i> -->
+            <a href="index.php?act=mybil"><i class="fa-solid fa-cart-shopping" id="nav-shopping"></i></a>
           </li>
         </ul>
 
@@ -118,52 +119,6 @@
         
         <img id="close" src="view/img/item/close.png" alt="">
       </div>
-      <div class="Shopping-cart">
-        <div class="title-cart">
-          <h3>Giỏ Hàng,<span> <span class="total-product">0</span> sản phẩm</span></h3>
-          <hr>
-        </div>
-          <form action="" method="post" id="cart-form">
-            <div class="cart-product-all">
-              <!-- <div class="cart-product">
-                <img src="./img/image 103 (1).png" alt="...">
-                <div id="item-product">
-                  <div class="cart-name-product">
-                  <p class="">Casio World Time AE1200WHD – Nam – Quartz (Pin) – Mặt Số 45 Mm, Bộ Bấm Giờ, Chống Nước 10
-                    ATM</p>
-                </div>
-                <div class="box-cart">
-                  <div class="value-cart">
-                    <label for="">Số lượng</label>
-                    <div class="value-box">
-                      <input type="number" class="value-product" value="1" min="1"  readonly>
-                    </div>
-                  </div>
-                  <div class="all-price-product">
-                    <p class="">Giá: <span>12000</span>đ</p>
-                  </div>
-                  <div class="trash">
-                    <i class="fa-solid fa-trash"></i>
-                  </div>
-                </div>
-              </div>
-            </div>  -->
-            
-
-          </div>
-          <div class="all-pay">
-            <div class="all-money">
-              <span>Tổng Tiền</span>
-              <span class="money">0</span>
-            </div>
-            <div class="btn-pay">
-              <button type="submit">Thanh Toán</button>
-            </div>
-          </div>
-        </form>
-        <img id="close-1" src="view/img/item/close.png" alt="">
-      </div>
-      <div class="backdrop-shopping">
 
       </div>
       <div class="backdrop"></div>
