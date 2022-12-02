@@ -474,6 +474,9 @@ li{
     height: 30px;
     padding-left: 10px;
    }
+   #ms-username{
+    color: red;
+   }
 }
 @media only screen and (min-width:46.25em) and (max-width:1099px)  {
     

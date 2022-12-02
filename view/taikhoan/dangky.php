@@ -17,7 +17,7 @@
     } ?>
     <input type="password" name="re-pass" id="re-password"required>
     <label for="">image</label>
-    <input type="file" name="file" id=""required>
+    <input type="file" name="file" id="">
     <label for="">Địa chỉ</label>
     <input type="text" name="adr" id="diachi"required>
     <label for="">Số điện thoại</label>
@@ -26,7 +26,7 @@
     <input type="email" name="email" id="email"required>
     <input type="hidden" name="vaitro"value="0">
     <div class="text-center mt-3">
-    <button type="submit" name="dangky"  class="btn btn-danger btn-dk"   >Đăng ký</button>
+    <button type="submit" name="dangky"  class="btn btn-danger btn-dk">Đăng ký</button>
     </div>
 </form>
 </div>

@@ -1,0 +1,165 @@
+
+<div class="container">
+    
+    <div class="row">
+      <div class="col-md-6">
+        <?php $hinhpath = "upload/"  ?>
+        <img src="<?php echo $hinhpath.$product['product_image']  ?>" class="w-100" alt="">
+        
+      </div>
+      <div class="col-md-6">
+        <div class="product-dtl">
+          <div class="product-info">
+            <div class="product-name"><?php echo $product['product_name']  ?></div>
+            <div class="reviews-counter">
+              <div class="rate">
+                <input type="radio" id="star5" name="rate" value="5" checked />
+                <label for="star5" title="text">5 stars</label>
+                <input type="radio" id="star4" name="rate" value="4" checked />
+                <label for="star4" title="text">4 stars</label>
+                <input type="radio" id="star3" name="rate" value="3" checked />
+                <label for="star3" title="text">3 stars</label>
+                <input type="radio" id="star2" name="rate" value="2" />
+                <label for="star2" title="text">2 stars</label>
+                <input type="radio" id="star1" name="rate" value="1" />
+                <label for="star1" title="text">1 star</label>
+              </div>
+              <span>3 Reviews</span>
+            </div>
+            <div class="product-price-discount"><span><?php echo $product['product_sale']  ?></span><span class="line-through">$29.00</span></div>
+          </div>
+            <div class="container border">
+              <table class="table table-striped">
+                <thead><tr><th>Chi Tiết Sản Phẩm</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <th scope="col">Size</th>
+                    <th ><?php echo $product['product_size']  ?></th>
+                  </tr>
+                  <tr>
+                    <th scope="col">Color</th>
+                    <th ><?php echo $product['product_color']  ?></th>
+                  </tr>
+                  <tr>
+                    <th scope="col">Type</th>
+                    <th ><?php echo $product['product_type']  ?></th>
+                  </tr>
+                  <tr>
+                    <th scope="col">Wire</th>
+                    <th ><?php echo $product['product_wire']  ?></th>
+                  </tr>
+                  <tr>
+                    <th scope="col">Origin</th>
+                    <th ><?php echo $product['product_origin']  ?></th>
+                  </tr>
+                  <tr>
+                    <th scope="col">insurance</th>
+                    <th ><?php echo $product['product_insurance']  ?></th>
+                  </tr>
+                  
+                </tbody>
+              </table>
+            </div>
+          <div class="product-count">
+
+
+            <a href="#" class="round-black-btn">Mua Ngay</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product-info-tabs">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab"
+            aria-controls="description" aria-selected="true">Description</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review"
+            aria-selected="false">Reviews (0)</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+      
+        <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
+          <div class="review-heading">REVIEWS</div>
+         <?php foreach ($comment as $value){
+
+             $query2 = "select * from users where user_id=".$value['comment_user'];
+             $user=pdo_query_one($query2);
+             echo " <div class='mb-20'><div class='user'>".$user['user_name'].": <div class='noidung'>".$value['comment_content']."</div> </div> </div>";
+         }?>
+          <?php
+          if(isset($_SESSION['user'])){
+            echo "<form class='review-form' action='index.php?act=binhluan' method='POST' id='binhluan'>
+            <div class='form-group'>
+              <label>Your rating</label>
+              <div class='reviews-counter'>
+                <div class='rate'>
+                  <input type='radio' id='star5' name='rate' value='5' />
+                  <label for='star5' title='text'>5 stars</label>
+                  <input type='radio' id='star5' name='rate' value='4' />
+                  <label for='star4' title='text'>4 stars</label>
+                  <input type='radio' id='star5' name='rate' value='3' />
+                  <label for='star4' title='text'>3 stars</label>
+                  <input type='radio' id='star5' name='rate' value='2' />
+                  <label for='star4' title='text'>2 stars</label>
+                  <input type='radio' id='star5' name='rate' value='1' />
+                  <label for='star4' title='text'>1 stars</label>
+                </div>
+              </div>
+            </div>
+            <div class='form-group' >
+              <label>Your message</label>
+              <input type='hidden' value='". $product['product_id']."' name='id_sp'>
+              <textarea class='form-control' rows='10' name='coment'  ></textarea>
+            </div>
+            <button class='round-black-btn' id='nut' >Submit Review</button>
+          </form>";
+          }else{
+            echo"<div class='btn btn_danger'>Đăng nhập để được bình luận </div>";
+          }
+          ?>
+        </div>
+      </div>
+     
+    </div>
+  </div>
+  <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+          totam rem aperiam.
+        </div>
+        <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
+          <div class="review-heading">REVIEWS</div>
+          <p class="mb-20">There are no reviews yet.</p>
+          <form class="review-form">
+            <div class="form-group">
+              <label>Your rating</label>
+              <div class="reviews-counter">
+                <div class="rate">
+                  <input type="radio" id="star5" name="rate" value="5" />
+                  <label for="star5" title="text">5 stars</label>
+                  <input type="radio" id="star4" name="rate" value="4" />
+                  <label for="star4" title="text">4 stars</label>
+                  <input type="radio" id="star3" name="rate" value="3" />
+                  <label for="star3" title="text">3 stars</label>
+                  <input type="radio" id="star2" name="rate" value="2" />
+                  <label for="star2" title="text">2 stars</label>
+                  <input type="radio" id="star1" name="rate" value="1" />
+                  <label for="star1" title="text">1 star</label>
+                </div>
+              </div>
+            </div>
+           
+          </form>
+        </div>
+        <div class="load" id="load"></div>
+      </div>
+<script>
+   
+</script>

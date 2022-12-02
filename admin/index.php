@@ -186,7 +186,7 @@ if (isset($_GET['act'])) {
             break;
     }
 } else {
-    include "../view/home.php";
+    include "../admin/home.php";
 }
 
 include "./footer.php";
