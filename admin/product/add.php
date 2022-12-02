@@ -1,18 +1,18 @@
-<div class="row">
-                <div class="row frmtitle">
+<div class="title-usser text-center">
+                <div class="frmtitle my-3">
                     <h1>THÊM MỚI SẢN PHẨM</h1>
                 </div>
-                <div class="row frmcontent">
+                <div class="frmcontent w-50">
                     <form action="index.php?act=add-products" method="post" enctype="multipart/form-data">
                     <label for="">Loại hàng</label>
-                            <select name="product_category" id="">
+                            <select name="product_category" class="w-100" id="">
                                 <?php 
                                     foreach($listcategorys as $categorys){
                                         extract($categorys);
                                         echo '<option value="'.$category_id.'">'.$category_name.'</option>';
                                     }
                                 ?>                               
-                            </select>
+                            </select> <br>
                        <label for="">Tên sản phẩm :</label>
                        <input type="text" name="product_name" id=""> <br>
 
@@ -46,10 +46,10 @@
                        
 
                         
-                        <div class="row mb10">
-                            <input type="submit" name="themmoi" value="THÊM MỚI">
-                            <input type="reset" value="NHẬP LẠI">
-                            <a href="index.php?act=list-products"><input type="button" value="DANH SÁCH"></a>    
+                        <div class="mt-4 btn-sp">
+                            <input type="submit" name="themmoi" class="btn btn-success" value="THÊM MỚI">
+                            <input type="reset" class="btn btn-success" value="NHẬP LẠI">
+                            <a href="index.php?act=list-products"><input type="button" class="btn btn-success" value="DANH SÁCH"></a>    
                         </div>
                         <?php
                             if(isset($thongbao) &&($thongbao != "")){
@@ -59,4 +59,5 @@
                     </form>
                 </div>
         </div>
+    </div>
     </div>

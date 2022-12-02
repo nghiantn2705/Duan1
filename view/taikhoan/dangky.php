@@ -1,5 +1,7 @@
-<form action="index.php?act=dangky" method="POST" enctype="multipart/form-data">
-    <label for="">Họ tên</label>
+<div class="dangky ">
+    <h1>Đăng ký</h1>
+<form action="index.php?act=dangky" method="POST" class="w-50" enctype="multipart/form-data">
+<label for="">Họ tên</label>
     <?php if(isset($_SESSION['erro-username'])){
        echo " <div id='ms-username'>".$_SESSION['erro-username']."</div>";
     } ?>
@@ -23,5 +25,8 @@
     <label for="">Email</label>
     <input type="email" name="email" id="email"required>
     <input type="hidden" name="vaitro"value="0">
-    <button type="submit">Đăng ký</button>
+    <div class="text-center mt-3">
+    <button type="submit" name="dangky"  class="btn btn-danger btn-dk"   >Đăng ký</button>
+    </div>
 </form>
+</div>

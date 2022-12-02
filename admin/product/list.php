@@ -1,12 +1,18 @@
 <div class="container">
-    <div class="frmtitle mb text-center">
-        <h1>DANH SÁCH LOẠI HÀNG HÓA</h1>
+    <div class="frmtitle my-3 text-center">
+        <h1>DANH SÁCH LOẠI SẢN PHẨM</h1>
     </div>
    
-    <div class="frmcontent">
+    <div class="">
         <form action="#" method="post" class="align-middle">
             <div class=" mb10 frmdsloai ">
-
+            <div class=" mb-3 text-center">
+                <input type="button" class="btn btn-success" value="Chọn tất cả">
+                <input type="button" class="btn btn-success" value="Bỏ chọn tất cả">
+                <a href="index.php?act=add-products"><input class="btn btn-success" type="button" value="Thêm mới"></a>
+                <input type="button" class="btn btn-success" value="Xóa các mục tất tả">
+              
+            </div>  
                 <table class="table table-striped table-striped-columns table-hover table-bordered">
                     <thead>
                         <tr>
@@ -28,10 +34,10 @@
                             <th>Xuất Xứ</th>
                             <th>Bảo Hành</th>
                             <th>commnet</th>
-                            <th>active</th>
+                            <th>action</th>
                         </tr>
                     </thead>
-                    <tbody class="align-middle">
+                    <tbody class="align-middle text-center">
                         <?php
                         foreach ($listproducts as $products) {
                             extract($products);
@@ -72,13 +78,8 @@
                     </tbody>
                 </table>
             </div>
-            <div class=" mb10 text-center">
-                <input type="button" class="btn btn-success" value="Chọn tất cả">
-                <input type="button" class="btn btn-success" value="Bỏ chọn tất cả">
-                <a href="index.php?act=add-products"><input class="btn btn-success" type="button" value="Thêm mới"></a>
-                <input type="button" class="btn btn-success" value="Xóa các mục tất tả">
-              
-            </div>
+           
         </form>
     </div>
+</div>
 </div>
