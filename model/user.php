@@ -9,9 +9,9 @@ function loadone_users($user_id){
     $sp=pdo_query_one($sql);
     return $sp;
 }
-function update_users($user_id,$user_name,$user_password,$user_image,$user_lastname,$user_address,$user_phone,$user_email){
+function update_users($user_id,$user_name,$user_password,$user_image,$user_address,$user_phone,$user_email){
     
-    $sql = "update users set user_name= '".$user_name."', user_password= '".$user_password."',   user_image= '".$user_image."',user_lastname= '".$user_lastname."', user_address= '".$user_address."', user_phone= '".$user_phone."', user_email= '".$user_email."'  where user_id =".$user_id;
+    $sql = "update users set user_name= '".$user_name."', user_password= '".$user_password."',   user_image= '".$user_image."', user_address= '".$user_address."', user_phone= '".$user_phone."', user_email= '".$user_email."'  where user_id =".$user_id;
     pdo_execute($sql);
     
 }
