@@ -13,9 +13,12 @@
                 <input type="text" width="300px" class="btn btn-success" placeholder="tìm kiếm sản phẩm" name="tukhoa">
                 <input type="submit" class="btn btn-success" name="timkiem" value="Tìm kiếm">
 
+                <a href="index.php?act=list-users"><input  class="btn btn-success" type="button" value="Danh Sách"></a>
+
           
             </div>
                 <table class="table table-striped table-striped-columns table-hover table-bordered">
+                <h3>Từ khóa tìm kiếm : <?php echo $_POST['tukhoa'];  ?> </h3>
                     <thead class="text-center">
                         <tr>
                             <th></th>
@@ -43,7 +46,7 @@
                     </thead>
                     <tbody class="text-center">
                         <?php
-                        foreach ($listusers as $users) {
+                        foreach ($listsearchuser as $users) {
                             extract($users);
                             $update_users = "index.php?act=update_users&user_id=".$user_id;
                             $delete_users = "index.php?act=delete_users&user_id=".$user_id;
