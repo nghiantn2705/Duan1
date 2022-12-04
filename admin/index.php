@@ -4,6 +4,7 @@ include "../model/pdo.php";
 include "../model/categorys.php";
 include "../model/product.php";
 include "../model/user.php";
+include "../model/thongke.php";
 
 
 
@@ -179,11 +180,21 @@ if (isset($_GET['act'])) {
 
         case 'delete_users':
             if (isset($_GET['user_id']) && ($_GET['user_id'] > 0)) {
-                delete_user($_GET['user_id']);
+                delete_users($_GET['user_id']);
             }
             $listusers = loadall_users();
             include "user/list.php";
             break;
+
+
+        // Thống kê 
+        case 'thongke':
+            $listtk = loadall_tk();
+            include "thongke/list.php";
+            break;
+        case 'bieudo':
+            $listtk = loadall_tk();
+            include "thongke/bieudo.php";
     }
 } else {
     include "./home.php";

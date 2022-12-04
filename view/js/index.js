@@ -50,15 +50,22 @@ $(document).ready(function () {
     loginuser.style.display = "none";
     const backdrop = document.querySelector(".backdrop");
     backdrop.style.display = "none";
+    const backdropdk = document.querySelector(".dangky");
+    backdropdk.style.display = "none"
   })
-  $("btn-collapse").click(function () {
-    const collapse1 = document.querySelector(".collapse-show");
-    if(collapse1.style.height === '1000.38px'){
-      collapse1.style.height = '100%';
-    }else{
-      collapse1.style.height === '1000.38px';
-    }
+  $("#btn-dk").click(function () {
+    const backdropdk = document.querySelector(".dangky");
+    backdropdk.style.display = "flex"
+    const loginuser = document.querySelector(".login-user");
+    loginuser.style.display = "none";
   })
+  $("#close1").click(function () {
+    const backdrop = document.querySelector(".backdrop");
+    backdrop.style.display = "none";
+    const backdropdk = document.querySelector(".dangky");
+    backdropdk.style.display = "none"
+  })
+ 
 
 
   var swiper = new Swiper(".mySwiper", {
@@ -98,10 +105,7 @@ $(document).ready(function () {
 
   var swiper1 = new Swiper(".mySwiper1", {
   
-    autoplay: {
-      delay: 6000,
-      disableOnInteraction: false,
-    },
+   
     breakpoints: {
       // when window width is >= 320px
       320: {

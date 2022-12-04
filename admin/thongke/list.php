@@ -1,67 +1,58 @@
-<table border="1">
-        <thead>
-            <th>Mã loại</th>
-            <th>Tên loại</th>
-            <th>Số lượng</th>
-            <th>Giá cao nhất</th>
-            <th>Giá thấp nhất</th>
-            <th>Giá trung bình</th>
-        </thead>
-        <tbody>
-            <?php
-            foreach ($listtk as $tk)
-            extract($tk);
-                echo '
+<div class="container">
+    <div class="frmtitle my-4 text-center">
+        <h1>Thống kê Loại Hàng</h1>
+    </div>
+    
+    <div class="">
+        <form action="" method="post">
+            <div class="mb10 text-center mb-4 ">
+               
+                <a href="index.php?act=add-categorys"><input class="btn btn-success" type="button" value="Thêm mới"></a>
+                
+                
+                <input type="text" class="btn btn-success" value="điền đi dm">
+                <input type="button" class="btn btn-success" value="Tìm kiếm">
+
+
+            </div>
+            <div class=" mb10 frmdsloai">
+                <table class="table table-striped table-striped-columns table-hover table-bordered">
+                    <thead class="text-center">
                         <tr>
-                        <td>'.$id_loai.'</td>
-                        <td>'.$ten_loai.'</td>
-                        <td>'.$countsp.'</td>
-                        <td>'.$maxprice.'</td>
-                        <td>'.$minprice.'</td>
-                        <td>'.$avgprice.'</td>
+                           
+                            <th>Mã loại</th>
+                            <th>Tên loại</th>
+                            <th>Số lượng</th>
+                            <th>Giá cao nhất</th>
+                            <th>Giá thấp nhất</th>
+                            <th>Giá trung bình</th>
                         </tr>
-                    ';
+                    </thead>
+                    <tbody class="text-center">
+                        <?php
+                        foreach ($listtk as $tk) {
+                            extract($tk);
+                            // $updatedm = "index.php?act=updatedm&category_id=".$category_id;
+                            // $deletedm = "index.php?act=deletedm&category_id=".$category_id;
+                        ?>
+                            <tr>
+                                
+                                <td><?= $category_id ?></td>
+                                <td><?= $category_name ?></td>
+                                <td><?= $countsp ?></td>
+                                <td><?= $maxprice ?></td>
+                                <td><?= $minprice ?></td>
+                                <td><?= $avgprice ?></td>
+                        
+                               
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+                <a href="index.php?act=bieudo"><input  type="button" value="Xem biểu đồ"></a>
+            </div>
 
-            ?>
-
-<div id="piechart"></div>
-
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
-<script type="text/javascript">
-    // Load google charts
-    google.charts.load('current', {
-        'packages': ['corechart']
-    });
-    google.charts.setOnLoadCallback(drawChart);
-
-    // Draw the chart and set the chart values
-    function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Loại', 'Số lượng sản phẩm'],
-            <?php
-            $tong_loai = count($listtk);
-            $i = 1;
-            foreach ($listtk as $thongke) {
-                extract($thongke);
-                if ($i == $tong_loai) $dauphay = "";
-                else $dauphay = ",";
-                echo "['" . $thongke['ten_loai'] . "'," . $thongke['countsp'] . "]" . $dauphay;
-                $i += 1;
-            }
-            ?>
-
-        ]);
-
-        // Optional; add a title and set the width and height of the chart
-        var options = {
-            'title': 'Thống kê sản phẩm',
-            'width': 1100,
-            'height': 800
-        };
-
-        // Display the chart inside the <div> element with id="piechart"
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-        chart.draw(data, options);
-    }
-</script>
+        </form>
+    </div>
+</div>
+</div>

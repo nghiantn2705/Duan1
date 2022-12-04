@@ -10,7 +10,7 @@
       <div class="col-md-6">
         <div class="product-dtl">
           <div class="product-info">
-            <div class="product-name mb-4"><?php echo $product['product_name']  ?></div>
+            <div class="product-name-1 mb-4 fs-2"><?php echo $product['product_name']  ?></div>
             <div class="reviews-counter">
               <div class="rate">
                 <input type="radio" id="star5" name="rate" value="5" checked />
