@@ -5,7 +5,7 @@
     
     <div class="">
         <form action="" method="post">
-            <div class="mb10 text-center mb-4 ">
+            <!-- <div class="mb10 text-center mb-4 ">
                
                 <a href="index.php?act=add-categorys"><input class="btn btn-success" type="button" value="Thêm mới"></a>
                 
@@ -14,7 +14,7 @@
                 <input type="button" class="btn btn-success" value="Tìm kiếm">
 
 
-            </div>
+            </div> -->
             <div class=" mb10 frmdsloai">
                 <table class="table table-striped table-striped-columns table-hover table-bordered">
                     <thead class="text-center">

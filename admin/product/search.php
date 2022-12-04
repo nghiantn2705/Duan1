@@ -4,10 +4,10 @@
     </div>
    
     <div class="">
-        
+        <form action="#" method="post" class="align-middle">
             <div class=" mb10 frmdsloai ">
             <div class=" mb-3 text-center">
-            
+            <form action="">
             <form action="index.php?act=products-search" method="post">
             <div class="mb10 text-center mb-4 ">
                 <form action="">
@@ -16,12 +16,13 @@
 
                 </form>
 
-    
-                <a href="index.php?act=add-products"><input class="btn btn-success" type="button" value="Thêm mới"></a>
+            </form>
+                <a href="index.php?act=list-products"><input class="btn btn-success" type="button" value="Danh Sách"></a>
               
               
             </div>  
                 <table class="table table-striped table-striped-columns table-hover table-bordered">
+                <h3>Từ khóa tìm kiếm : <?php echo $_POST['tukhoa'];  ?> </h3>
                     <thead>
                         <tr>
                            
@@ -47,7 +48,7 @@
                     </thead>
                     <tbody class="align-middle text-center">
                         <?php
-                        foreach ($listproducts as $products) {
+                        foreach ($listsearchsp as $products) {
                             extract($products);
                             $updatesp = "index.php?act=updatesp&product_id=".$product_id;
                             $deletesp = "index.php?act=deletesp&product_id=".$product_id;

@@ -4,7 +4,7 @@
 
     <div class="form text-center">
         <form action="index.php?act=add-categorys" method="post">
-            <label for="" style=""  >Tên loại:</label>
+            <label for=""   >Tên loại:</label>
             <input type="text" name="category_name" style="width: 250px;" class="mb-4" >
             <div class="button mb-5">
                 <input type="submit" class="btn btn-success"  name="themmoi" value="Thêm Mới">

@@ -5,6 +5,7 @@ include "../model/categorys.php";
 include "../model/product.php";
 include "../model/user.php";
 include "../model/thongke.php";
+include "../model/timkiem.php";
 
 
 
@@ -21,6 +22,22 @@ if (isset($_GET['act'])) {
             $listcategorys = loadall_categorys();
             include "categorys/list.php";
             break;
+
+        case 'categorys-search':
+            if (isset($_POST['timkiem']) && ($_POST['timkiem'])) {
+                $tukhoa = $_POST['tukhoa'];
+             
+        
+                
+                
+            }else{
+                echo "Không có ";
+            }
+            $listsearch =serch_categorys($tukhoa);
+            include "categorys/search.php";
+            
+            break;
+
         case 'add-categorys':
             // Kiểm tra xem người dùng có click vào nút add hay không
             if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
@@ -67,6 +84,17 @@ if (isset($_GET['act'])) {
         default:
             include "../view/home.php";
             break;
+
+            case 'products-search':
+                if (isset($_POST['timkiem']) && ($_POST['timkiem'])) {
+                    $tukhoa = $_POST['tukhoa'];
+                    
+                    
+                }
+                $listsearchsp =serch_products($tukhoa);
+                include "product/search.php";
+                
+                break;
 
         case 'add-products':
             // Kiểm tra xem người dùng có click vào nút add hay không
@@ -129,6 +157,14 @@ if (isset($_GET['act'])) {
                 $target_dir = "../upload/";
                 $target_file = $target_dir . basename($_FILES["product_image"]["name"]);
                 $product_id = $_POST['product_id'];
+
+                if (move_uploaded_file($_FILES["product_image"]["tmp_name"], $target_file)) {
+
+                    //quá là ok
+                } else {
+                    // lỗi r
+                }
+
                 update_product($product_id, $product_category, $product_name, $product_image, $product_price, $product_sale, $product_size, $product_color, $product_type, $product_wire, $product_origin, $product_insurance);
                 $thongbao = "Cập nhật thành công thành công";
             }
@@ -136,47 +172,58 @@ if (isset($_GET['act'])) {
             $listproducts = loadall_product();
             include "product/list.php";
             break;
-          
+
 
             // Quản lí khách hàng
         case 'list-users':
             $listusers = loadall_users();
             include "user/list.php";
             break;
-        
-            case 'update_users':
-                if (isset($_GET['user_id']) && ($_GET['user_id'] > 0)) {
-                    $update_users = loadone_users($_GET['user_id']);
+
+            case 'users-search':
+                if (isset($_POST['timkiem']) && ($_POST['timkiem'])) {
+                    $tukhoa = $_POST['tukhoa'];
+                    
+                    
                 }
-                include "user/update.php";
+                $listsearchuser =serch_users($tukhoa);
+                include "user/search.php";
+                
                 break;
-    
-            case 'update_user':
-    
-                // Kiểm tra xem người dùng có click vào nút add hay không
-                if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
-    
-                    $user_name = $_POST['user_name'];
-                    $user_password = $_POST['user_password'];
-                    $user_image = $_FILES['user_image']['name'];
-                    $user_lastname = $_POST['user_lastname'];
-                    $user_address = $_POST['user_address'];
-                    $user_phone = $_POST['user_phone'];
-                    $user_email = $_POST['user_email'];
-                    // $product_type = $_POST['product_type'];
-                    // $product_wire = $_POST['product_wire'];
-                    // $product_origin = $_POST['product_origin'];
-                    // $product_insurance = $_POST['product_insurance'];
-                    // $product_image = $_FILES['product_image']['name'];
-                    $target_dir = "../upload/";
-                    $target_file = $target_dir . basename($_FILES["user_image"]["name"]);
-                    $user_id = $_POST['user_id'];
-                     update_users($user_id,$user_name,$user_password,$user_image,$user_lastname,$user_address,$user_phone,$user_email);
-                    $thongbao = "Cập nhật thành công thành công";
-                }
-                $listusers = loadall_users();
-                include "user/list.php";
-                break;
+                
+        case 'update_users':
+            if (isset($_GET['user_id']) && ($_GET['user_id'] > 0)) {
+                $update_users = loadone_users($_GET['user_id']);
+            }
+            include "user/update.php";
+            break;
+
+        case 'update_user':
+
+            // Kiểm tra xem người dùng có click vào nút add hay không
+            if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+
+                $user_name = $_POST['user_name'];
+                $user_password = $_POST['user_password'];
+                $user_image = $_FILES['user_image']['name'];
+                $user_lastname = $_POST['user_lastname'];
+                $user_address = $_POST['user_address'];
+                $user_phone = $_POST['user_phone'];
+                $user_email = $_POST['user_email'];
+                // $product_type = $_POST['product_type'];
+                // $product_wire = $_POST['product_wire'];
+                // $product_origin = $_POST['product_origin'];
+                // $product_insurance = $_POST['product_insurance'];
+                // $product_image = $_FILES['product_image']['name'];
+                $target_dir = "../upload/";
+                $target_file = $target_dir . basename($_FILES["user_image"]["name"]);
+                $user_id = $_POST['user_id'];
+                update_users($user_id, $user_name, $user_password, $user_image, $user_lastname, $user_address, $user_phone, $user_email);
+                $thongbao = "Cập nhật thành công thành công";
+            }
+            $listusers = loadall_users();
+            include "user/list.php";
+            break;
 
         case 'delete_users':
             if (isset($_GET['user_id']) && ($_GET['user_id'] > 0)) {
@@ -187,7 +234,7 @@ if (isset($_GET['act'])) {
             break;
 
 
-        // Thống kê 
+            // Thống kê 
         case 'thongke':
             $listtk = loadall_tk();
             include "thongke/list.php";
@@ -195,6 +242,7 @@ if (isset($_GET['act'])) {
         case 'bieudo':
             $listtk = loadall_tk();
             include "thongke/bieudo.php";
+            break;
     }
 } else {
     include "./home.php";
