@@ -31,9 +31,9 @@
 <!--Product-->
 <div class="product">
 
-  <div class="swiper mySwiper1">
-    <h3>Sản Phẩm Bán Chạy</h3>
-    <div class="swiper-wrapper">
+  <div class="swiper mySwiper1 ">
+    <h3 class="">Sản Phẩm Bán Chạy</h3>
+    <div class="swiper-wrapper ">
       <?php foreach ($listproducts as $prodcuts) {
         extract($prodcuts);
         $hinhpath = "upload/" . $product_image;
@@ -140,11 +140,9 @@
       
     </div>
     <div class="d-flex justify-content-center">
-      <p class="btn-collapse ">
-        <a type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        <a class="btn-collapse " type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
           xem thêm
           <i class="fa-solid fa-arrow-right"></i></a>
-      </p>
     </div>
   </div>
 </div>
