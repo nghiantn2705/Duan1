@@ -128,24 +128,24 @@ function loadall_cart($idbill){
   return $bill;
 }
 function loadall_cart_count($idbill){
-  $sql = "select * from cart where idbill =".$idbill;
+  $sql = "select * from cart where cart_bill =".$idbill;
   $bill=pdo_query($sql);
   return sizeof($bill);
 }
-////////////////////////////////////////////////////////////////////////
-function loadall_bill($kyw="",$iduser=0){
 
-  $sql = "select * from bill where 1";
-  if($iduser >0) {
-      $sql.=" and iduser=".$iduser;
-  }
-  if($iduser != "") {
-      $sql.=" and id like '%".$kyw."%'";
-  }
-  $sql.=" order by id";
-  $listbill=pdo_query($sql);
-  return $listbill;
-}
+// function loadall_bill($kyw="",$iduser=0){
+
+//   $sql = "select * from bill where 1";
+//   if($iduser >0) {
+//       $sql.=" and iduser=".$iduser;
+//   }
+//   if($iduser != "") {
+//       $sql.=" and bill_id like '%".$kyw."%'";
+//   }
+//   $sql.=" order by bill_id";
+//   $listbill=pdo_query($sql);
+//   return $listbill;
+// }
 
 function get_ttdh($n){
   switch ($n) {

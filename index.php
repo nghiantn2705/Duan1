@@ -126,14 +126,16 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             include "view/billconfirm.php";
             break;
             case 'mybill':
-                $listbill=loadall_bill($_SESSION['user']['user_id']);
+                var_dump($_SESSION['user']['id']);
+                die;
+                $listbill=loadall_bill($_SESSION['users']['id']);
                 include "view/mybill.php";
                 break;
-                case "form":
+            case 'form':
                     session_destroy(); 
                         include "view/taikhoan/dangky.php";
                     break;
-                case "chitiet":
+            case 'chitiet':
                 $id = $_GET['id'];
                 $query = "select * from products where product_id=".$id;
                 $query1 = "select * from comments where comment_product=".$id;
@@ -143,7 +145,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 include "view/productdesc.php";
                 break;
                     break;
-                case "binhluan": 
+                case 'binhluan': 
                     $comment = $_POST['coment'];
                     $user = $_SESSION['user_id'];
                     $product = $_POST['id_sp'];

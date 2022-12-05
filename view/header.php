@@ -37,7 +37,7 @@
           </li>
           <li class="nav-item">
             <!-- <i class="fa-solid fa-cart-shopping" id="nav-shopping"></i> -->
-            <a href="index.php?act=mybil"><i class="fa-solid fa-cart-shopping" id="nav-shopping"></i></a>
+            <a href="index.php?act=mybill"><i class="fa-solid fa-cart-shopping" id="nav-shopping"></i></a>
           </li>
         </ul>
 
