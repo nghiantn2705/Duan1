@@ -65,6 +65,20 @@ $(document).ready(function () {
     const backdropdk = document.querySelector(".dangky");
     backdropdk.style.display = "none"
   })
+  $("#btn-cn").click(function () {
+    const backdropcn = document.querySelector(".capnhap");
+    backdropcn.style.display = "flex"
+    const backdropdk = document.querySelector(".dangky");
+    backdropdk.style.display = "none";
+    const loginuser = document.querySelector(".login-user");
+    loginuser.style.display = "none";
+  })
+  $("#close2").click(function () {
+    const backdrop = document.querySelector(".backdrop");
+    backdrop.style.display = "none";
+    const backdropcn = document.querySelector(".capnhap");
+    backdropcn.style.display = "none"
+  })
  
 
 

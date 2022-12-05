@@ -1,7 +1,7 @@
 <table>
-<h1>Biểu đồ</h1>
+<h1 class="text-center mt-3">Biểu đồ</h1>
 
-<div id="piechart"></div>
+<div id="piechart" class="text-center"></div>
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
@@ -27,12 +27,10 @@ function drawChart() {
             ?>
 
         ]);
-
-        // Optional; add a title and set the width and height of the chart
         var options = {
             'title': 'Thống kê sản phẩm',
-            'width': 1100,
-            'height': 800
+            'width': 900,
+            'height': 700
         };
 
   // Display the chart inside the <div> element with id="piechart"

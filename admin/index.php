@@ -6,9 +6,8 @@ include "../model/product.php";
 include "../model/user.php";
 include "../model/thongke.php";
 include "../model/timkiem.php";
-
-
-
+include "../model/cart.php";
+include "../model/bill.php";
 include "./header.php";
 
 // Controller
@@ -232,7 +231,36 @@ if (isset($_GET['act'])) {
             $listusers = loadall_users();
             include "user/list.php";
             break;
-
+            case 'listbill':
+                if(isset($_POST["kyw"]) && $_POST["kyw"] != ""){
+                    $kyw = $_POST['kyw'];
+                }else{
+                    $kyw = "";
+                }
+                $listbill =  loadall_bill($kyw,0);
+                include "bill/listbill.php";
+                break;
+            case 'updatebill':
+                    if (isset($_GET['bill_id']) && ($_GET['bill_id'] > 0)) {
+                        $update_bill = loadone_ttbill($_GET['bill_id']);
+                    }
+                    $listbill =  loadall_bill();
+                    include "bill/updatebill.php";
+                    break;
+            // case 'updatebill':
+    
+            //     include "bill/updatebill.php";
+            //     break;
+            case 'updatebills':
+                if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+                    $bill_id = $_POST['bill_id'];
+                    $bill_status = $_POST['bill_status'];
+                    update_bill($bill_id,$bill_status);
+                    $thongbao = "Cập nhật thành công thành công";
+                }
+                $listbill =  loadall_bill();
+                include "bill/listbill.php";
+                break;    
 
             // Thống kê 
         case 'thongke':

@@ -3,18 +3,9 @@
         <h1>Thống kê Loại Hàng</h1>
     </div>
     
-    <div class="">
+    <div class="text-center">
+    <a href="index.php?act=bieudo"><input  type="button" value="Xem biểu đồ" class="btn btn-success mb-3"></a>
         <form action="" method="post">
-            <!-- <div class="mb10 text-center mb-4 ">
-               
-                <a href="index.php?act=add-categorys"><input class="btn btn-success" type="button" value="Thêm mới"></a>
-                
-                
-                <input type="text" class="btn btn-success" value="điền đi dm">
-                <input type="button" class="btn btn-success" value="Tìm kiếm">
-
-
-            </div> -->
             <div class=" mb10 frmdsloai">
                 <table class="table table-striped table-striped-columns table-hover table-bordered">
                     <thead class="text-center">
@@ -49,7 +40,7 @@
                         <?php } ?>
                     </tbody>
                 </table>
-                <a href="index.php?act=bieudo"><input  type="button" value="Xem biểu đồ"></a>
+              
             </div>
 
         </form>

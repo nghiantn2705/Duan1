@@ -303,6 +303,18 @@ li{
         z-index: 501;
         align-items: center;
     }
+    .backdrop-capnhap{
+        display: none;
+        position: fixed;
+        top:0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        opacity: 0.6;
+        background: #000000;
+        z-index: 504;
+        align-items: center;
+    }
     .banner img {
         height: 500px;
     }
@@ -493,6 +505,46 @@ li{
    display: block;
    }
    .dangky input{
+    width: 100%;
+    padding-left: 10px;
+    margin: 5px 0px 10px 0px;
+    border-radius: 5px;
+    height: 40px;
+   }
+   .capnhap{
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+    position: fixed;
+    top:9%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 16px;
+    padding: 30px 50px 30px 50px;
+    width: 600px;
+    height: 820px;
+    border: 1px solid #000;
+    z-index: 10002;
+    background-color: #fff;
+   }
+   .capnhap #close2{
+    height: 20px;
+    position: absolute;
+    top:20px;
+    right:20px;
+    cursor: pointer;
+   }
+   .capnhap label{
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-top: 10px;
+   display: block;
+   }
+   .capnhap input{
     width: 100%;
     padding-left: 10px;
     margin: 5px 0px 10px 0px;

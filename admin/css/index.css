@@ -73,6 +73,21 @@ img {
     margin: 10px 0px;
     font-weight: 600;
 }
+.frmcontent1{
+    text-align: left;
+    border: 1px solid #4A4A4A;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0px 100px;
+}
+.frmcontent1 input{
+    padding: 5px;
+    margin: 0px 5px;
+}
+.frmcontent1 label{
+    margin: 10px 0px;
+    font-weight: 600;
+}
 .btn-sp {
     text-align: center;
 }

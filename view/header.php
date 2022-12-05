@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="view/css/index123.css">
+  <link rel="stylesheet" href="view/css/index2.css">
 
 </head>
 
@@ -83,7 +83,7 @@
           echo " <h4>Xin chào</h4>
         <ul>
         <li><a href='index.php?act=logout'>Đăng xuất</a></li>
-        <li><a href='index.php?act=updateUser'>Cập nhật tài khoản</a></li>
+        <span class='' type='submit' id='btn-cn'>Cập nhập tài khoản</span>
         </ul>";
         } else {
           echo "<form action='index.php?act=dangnhap' method='POST'>
@@ -149,9 +149,40 @@
         </form>
         <img id="close1" src="view/img/item/close.png" alt="">
       </div>
-      
+
+      <div class="capnhap">
+      <h1 class="text-center mt-1">Cập nhập tài khoản</h1>
+      <?php $alo = $_SESSION['anh'];?>
+      <form action="index.php?act=updateUser" method="POST"  enctype="multipart/form-data">
+      <label for="">Họ tên</label>
+          
+          <input type="text" name="username" id="username" value="<?php echo $_SESSION['user'] ?>" >
+          <label for="">Passwword</label>
+          
+          <input type="password" name="password" id="password" value="<?php echo $_SESSION['pass'] ?>" >
+          <label for="">Re-password</label>
+          
+          <input type="password" name="re-pass" id="re-password" value="<?php echo $_SESSION['pass'] ?>">
+          <label for="">image</label>
+          <input type="text" value= "<?=$alo?>" name="anhcu" id="anhcu">
+          <input type="file" name="file" id="">
+          <label for="">Địa chỉ</label>
+          <input type="text" name="adr" id="diachi" value="<?php echo $_SESSION['diachi'] ?>">
+          <label for="">Số điện thoại</label>
+          <input type="phone" name="phone" id="phone" value="<?php echo $_SESSION['sdt'] ?>">
+          <label for="">Email</label>
+          <input type="email" name="email" id="email" value="<?php echo $_SESSION['email'] ?>">
+          <input type="hidden" name="vaitro"value="0">
+          <div class="text-center mt-3">
+          <button type="submit" name="capnhat"  class="btn btn-danger btn-dk mb-2"   >Cập nhật</button>
+          </div>
+        </form>
+        <img id="close2" src="view/img/item/close.png" alt="">
+      </div>
     </div>
+
     <div class="backdrop-dangky"></div>
+    <div class="backdrop-capnhap"></div>
     <div class="backdrop"></div>
     </div>
   </header>

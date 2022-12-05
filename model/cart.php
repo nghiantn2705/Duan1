@@ -127,25 +127,25 @@ function loadall_cart($idbill){
   $bill=pdo_query($sql);
   return $bill;
 }
-function loadall_cart_count($idbill){
-  $sql = "select * from cart where idbill =".$idbill;
+function loadall_cart_count($cart_bill){
+  $sql = "select * from cart where cart_bill =".$cart_bill;
   $bill=pdo_query($sql);
   return sizeof($bill);
 }
 ////////////////////////////////////////////////////////////////////////
-function loadall_bill($kyw="",$iduser=0){
+// function loadall_bill($kyw="",$iduser=0){
 
-  $sql = "select * from bill where 1";
-  if($iduser >0) {
-      $sql.=" and iduser=".$iduser;
-  }
-  if($iduser != "") {
-      $sql.=" and id like '%".$kyw."%'";
-  }
-  $sql.=" order by id";
-  $listbill=pdo_query($sql);
-  return $listbill;
-}
+//   $sql = "select * from bill where 1";
+//   if($iduser >0) {
+//       $sql.=" and iduser=".$iduser;
+//   }
+//   if($iduser != "") {
+//       $sql.=" and id like '%".$kyw."%'";
+//   }
+//   $sql.=" order by id";
+//   $listbill=pdo_query($sql);
+//   return $listbill;
+// }
 
 function get_ttdh($n){
   switch ($n) {
@@ -176,3 +176,31 @@ function loadall_thongke(){
   $listtk=pdo_query($sql);
   return $listtk;
 }
+
+function bill_tien_momoQR(){
+  $tong = 0;
+  foreach ($_SESSION['mycart'] as $cart) {
+    $moneyy = $cart[3] * $cart[4];
+    $tong += $moneyy;
+  }
+  echo '
+  <table class="table table-striped table-striped-columns table-hover table-bordered">
+  <thead class="text-center">
+      <tr>
+          <td>
+          <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="./view/momoQR.php">
+          <input hidden type="text" name="amount" value=' . $tong . ' class="form-control"/>
+          <input type="submit" class="btn btn-success w-40" value="Thanh toan qua QR code" name="momo">
+          </form>
+          </td>
+          <td><form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="./view/momoATM.php">
+          <input hidden type="text" name="amount" value=' . $tong . ' class="form-control"/>
+          <input type="submit" class="btn btn-success w-40" value="Thanh toan qua ATM momo" name="momo">
+          </form> </td>
+      </tr>
+  </thead>
+</table>
+';
+}
+
+  
