@@ -1,4 +1,4 @@
-<div class=" mb">
+<div class=" mb container">
     <div class="boxtrai mr">
         <form action="index.php?act=billcomfirm" method="post" >
             <div class=" mb">
@@ -73,8 +73,18 @@
                 <input type="submit" class="btn btn-success w-100" value="ĐỒNG Ý ĐẶT HÀNG" name="dongydathang">
             </div>
 
+            
         </form>
-        
+         <?php
+            bill_tien_momoQR();
+            ?>
+            <!-- <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="./view/momoQR.php">
+                            <input type="submit" class="btn btn-success w-40" value="Thanh toan qua QR code" name="momo">
+            </form>
+        <br>
+        <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="./view/momoATM.php">
+                        <input type="submit" class="btn btn-success w-40" value="Thanh toan qua ATM momo" name="momo">
+        </form> -->
     </div>
 
     

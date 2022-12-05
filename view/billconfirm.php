@@ -1,4 +1,4 @@
-<div class=" mb">
+<div class="container mb">
     <div class="boxtrai mr">
         <div class=" mb">
             <div class="boxcontent" style="text-align:center">

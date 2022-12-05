@@ -10,7 +10,7 @@
             <form action="index.php?act=users-search" method="post">
             <div class="mb10 text-center mb-4 ">
                 <form action="">
-                <input type="text" width="300px" class="btn btn-success" placeholder="tìm kiếm sản phẩm" name="tukhoa">
+                <input type="text" width="300px" class="btn btn-light" placeholder="tìm kiếm sản phẩm" name="tukhoa">
                 <input type="submit" class="btn btn-success" name="timkiem" value="Tìm kiếm">
 
           

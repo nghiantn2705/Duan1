@@ -47,7 +47,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             $username =$_POST['username'];
             $password = $_POST['password'];
             $user = select();
-           
+            $_SESSION= array();
             foreach($user as $value){
                 if($username==$value['user_name'] && $password==$value['user_password']){
                     $_SESSION['user_id']=$value['user_id'];

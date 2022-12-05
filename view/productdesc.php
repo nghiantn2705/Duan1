@@ -61,9 +61,16 @@
               </table>
             </div>
           <div class="product-count">
+          <form action="index.php?act=addtocart" method="POST">
+            <input type="text" hidden name="product_id" value="<?php echo $product['product_id']  ?>">
+            <input type="text" hidden name="product_name" value="<?php echo $product['product_name']  ?>">
+            <input type="text" hidden name="product_image" value="<?php echo $product['product_image']  ?>">
+            <input type="number" hidden name="product_price" value="<?php echo $product['product_sale']  ?>">
+            <input type="submit" class="product-btn-cart" style="width:250px ;" name="addtocart" value="Mua ngay"></input>
+          </form>
 
 
-            <a href="#" class="round-black-btn">Mua Ngay</a>
+            <!-- <a href="#" class="round-black-btn">Mua Ngay</a> -->
           </div>
         </div>
       </div>

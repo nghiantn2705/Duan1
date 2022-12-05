@@ -1,4 +1,4 @@
-<div class=" mb">
+<div class="container mb">
     <div class="boxtrai mr">
         <div class="mb ">
         <h3 class="boxtitle text-center" style="color:red">Sản phẩm bạn đã chọn</h3>
