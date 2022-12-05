@@ -133,19 +133,19 @@ function loadall_cart_count($idbill){
   return sizeof($bill);
 }
 ////////////////////////////////////////////////////////////////////////
-// function loadall_bill($kyw="",$iduser=0){
+function loadall_bill($kyw="",$iduser=0){
 
-//   $sql = "select * from bill where 1";
-//   if($iduser >0) {
-//       $sql.=" and iduser=".$iduser;
-//   }
-//   if($iduser != "") {
-//       $sql.=" and id like '%".$kyw."%'";
-//   }
-//   $sql.=" order by id";
-//   $listbill=pdo_query($sql);
-//   return $listbill;
-// }
+  $sql = "select * from bill where 1";
+  if($iduser >0) {
+      $sql.=" and iduser=".$iduser;
+  }
+  if($iduser != "") {
+      $sql.=" and id like '%".$kyw."%'";
+  }
+  $sql.=" order by id";
+  $listbill=pdo_query($sql);
+  return $listbill;
+}
 
 function get_ttdh($n){
   switch ($n) {
