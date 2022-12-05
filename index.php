@@ -16,19 +16,31 @@ $dstop10=loadall_sanpham_top10();
 if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
-
-
         case 'dangky':
-            if (isset($_POST['dangky'])) {
-                if ($_POST['password'] == $_POST['re-pass']) {
-                    adduser($_POST['username'], $_POST['password'], $_POST['email'], $_POST['phone'], $_FILES['file']['name'], $_POST['adr'], $_POST['vaitro'], $_FILES['file']['tmp_name']);
-                    //  echo $_SESSION['thanhcong']="oke";
+            session_destroy();
+            if(strlen($_POST['username'])>=8){
+                if(strlen($_POST['password'])>=8){
+                    if($_POST['password']==$_POST['re-pass']){
+                        $_SESSION['erro-done']="Đăng ký thành công ";
+                       echo "<script>
+                       alert('Bạn đã đăng ký thành công.');
+                    </script>";
                     include "view/home.php";
-                } else {
-                    
                 }
+                else{
+                    $_SESSION['erro-repassword']="Re-password không trùng khớp so với passwword ";
+                    include "view/taikhoan/dangky.php";
+                }
+            }else{
+                $_SESSION['erro-password']="Password không được ngắn hơn 8 ký tự ";
+                include "view/taikhoan/dangky.php";
             }
-            include "./view/taikhoan/dangky.php";
+        }
+            else{
+                $_SESSION['erro-username']="Username không được ngắn hơn 8 ký tự ";
+                include "view/taikhoan/dangky.php";
+            }
+            
             break;
         case 'dangnhap':
 
@@ -43,7 +55,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     $_SESSION['email']=$value['user_email'];
                     $_SESSION['sdt']=$value['user_phone'];
                     $_SESSION['diachi']=$value['user_address'];
-                    
+                    $_SESSION['pass']=$value['user_password'];
+                    $_SESSION['anh']=$value['user_image'];
+                    // var_dump($_SESSION['anh']);
                     if($value['user_vaitro']==1){
                        
                        header('location:admin/index.php');
@@ -64,7 +78,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         case 'logout':
             unset($_SESSION['user']);
 
-            include "view/home.php";
+            header("location:index.php");
             break;
         case 'thoat':
             session_unset();
@@ -149,7 +163,42 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     $product = $_POST['id_sp'];
                     addComent($comment,$user,$product);
                     header('location:index.php?act=chitiet&id='.$product);
-                    break;              
+                    break;   
+                    
+                    case "updateUser":
+                        $anh = $_SESSION['anh'];
+                        if(isset($_POST['capnhat'])){
+                            if(strlen($_POST['password'])>=8){
+                                if ($_POST['password'] == $_POST['re-pass']) {
+                                    if($_FILES['file']['name']==""){
+                                        $image = $_POST['anhcu'];
+                                    }else{
+                                        $image= $_FILES['file']['name'];
+                                    }
+                                    update_users($_SESSION['user_id'],$_POST['username'],$_POST['password'],$image,$_POST['adr'],$_POST['phone'],$_POST['email']);
+                                    echo "<script>
+                                    alert('Cập nhật thành công');
+                                 </script>";
+                                    include "view/home.php";
+                                } else {
+                                    //  $_SESSION['erro-repassword']="Re-password không trùng khớp so với passwword ";
+                                        echo "<script>
+                                        alert('Re-password không trùng khớp so với passwword ');
+                                     </script>";   
+                                     include "view/home.php";
+                                }
+                            }
+                            else {
+                                echo "<script>
+                                alert('Password phải có độ dài lớn hơn 8 ký tự');
+                             </script>";
+                             include "view/home.php";
+                            }
+                        }else{
+                            include "view/taikhoan/updateUser.php";
+                        }
+                            var_dump($_POST);
+                        break;     
         default:
             include "view/home.php";
             break;
