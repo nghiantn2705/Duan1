@@ -42,7 +42,7 @@
         </ul>
 
       </div>
-      <ul class="nav-menu">
+      <!-- <ul class="nav-menu">
         <li class="nav-drop">
           <a href="#" id="item-drop">
             <img src="view/img/item/icon-4.png" alt="">
@@ -75,7 +75,7 @@
           </a>
         </li>
         <img src="view/img/item/icon-sale.png" alt="">
-      </ul>
+      </ul> -->
 
       <div class="login-user">
 

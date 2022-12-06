@@ -23,26 +23,17 @@
         $listsanpham=pdo_query($sql);
         return $listsanpham;
     }
-    function loadall_sanpham($kyw="",$iddm=0){
-        $sql = "select * from sanpham where 1";
-        if($kyw!=""){
-            $sql.=" and name like '%".$kyw."%'";
-        }
-        if($iddm>0){
-            $sql.=" and iddm = '".$iddm."'";
-        }
-
-        $sql.=" order by id desc";
-        // nỗi chuỗi .= cách khoảng
+    function loadall_sanpham(){
+        $sql = "select * from products";
         $listsanpham=pdo_query($sql);
         return $listsanpham;
     }
-    function load_ten_dm($iddm){
-        if($iddm>0){
-            $sql="select * from danhmuc where id =".$iddm;
+    function load_ten_dm($category_id){
+        if($category_id>0){
+            $sql="select * from categorys where category_id =".$category_id;
         $dm=pdo_query_one($sql);
         extract($dm);
-        return $name;
+        return $category_name;
         }else{
             return "";
         }
