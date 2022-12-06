@@ -1,22 +1,19 @@
-
+<?php 
+    if(is_array($update_bill)){
+        extract($update_bill);
+    }
+?>
 <div class="">
                 <div class="text-center frmtitle my-3">
                     <h1>CẬP NHẬT LOẠI HÀNG HÓA</h1>
                 </div>
                 <div class="text-center frmcontent1">
-                <form action="index.php?act=updatebill" method="post" enctype="multipart/form-data">
+                <form action="index.php?act=updatebills" method="post" enctype="multipart/form-data">
                
                         <label for="">Tình trạng đơn hàng</label>
-                        <select name="bill_status" id="">
-                                <?php 
-                                    foreach($listbill as $bill){
-                                        extract($bill);   
-                                        echo '<option value="'.$bill_id.'">'.get_ttdh($bill["bill_status"]).'</option>';
-                                    }
-                                ?>                               
-                            </select>
+                        <input type="text" name="bill_status" value="<?php echo $bill_status;?>">
                         <div class=" d-flex justify-content-center">
-                            <input type="hidden" class="btn btn-success " name="id" value="<?=$id?>">
+                            <input type="hidden" class="btn btn-success " name="bill_id" value="<?=$bill_id?>">
                             <input type="submit" class="btn btn-success " name="capnhat" value="CẬP NHẬT">
                             <input type="reset" class="btn btn-success" value="NHẬP LẠI">
                             <a href="index.php?act=listsp"><input type="button" class="btn btn-success" value="DANH SÁCH"></a>    

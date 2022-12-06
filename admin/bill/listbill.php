@@ -43,6 +43,7 @@
                             $ttdh  = get_ttdh($bill["bill_status"]);
                             $countsp = loadall_cart_count($bill["bill_id"]);
                             $updatebill = "index.php?act=updatebill&bill_id=" . $bill_id;
+                            $xoabill = "index.php?act=deletebill&bill_id=".$bill_id;
                         ?>
                             <tr>
 
@@ -63,28 +64,7 @@
                                 </td>
                             </tr>
                         <?php } ?>
-                        <!-- <?php
-                                foreach ($listbill as $bill) {
-                                    extract($bill);
-                                    $kh = $bill["bill_name"] . '<br> ' . $bill["bill_email"] . '<br> ' . $bill["bill_address"] . '<br> ' . $bill["bill_phone"];
-                                    $ttdh  = get_ttdh($bill["bill_status"]);
-                                    $countsp = loadall_cart_count($bill["bill_id"]);
-                                    $updatebill = "index.php?act=updatebill&bill_id=" . $bill_id;
-                                    echo '<tr>
-                                            
-                                                    <td><input type="checkbox" name="" id=""></td>
-                                                    <td>' . $bill['bill_id'] . '</td>
-                                                    <td>' . $kh . '</td>
-                                                    <td>' . $countsp . '</td>
-                                                    <td><strong>' . $bill['bill_total'] . '</strong> VND</td>
-                                                    <td>' . $ttdh . '</td>
-                                                    <td>
-                                                        <a href="<?=.$updatebill.>"><input  type="button" value="Sửa"></a>  
-                                                        <a href="<?=$xoabill?>"><input type="button" value="Xóa"></a>   
-                                                    </td>
-                                                </tr>';
-                                }
-                                ?> -->
+                        
                     </tbody>
                 </table>
             </div>

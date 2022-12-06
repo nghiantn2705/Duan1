@@ -9,8 +9,9 @@ include "model/cart.php";
 include "global.php";
 include "view/header.php";
 include "model/comment.php";
+include "model/categorys.php";
 if (!isset($_SESSION['mycart'])) $_SESSION['mycart'] = [];
-
+$dsdm = loadall_categorys();
 $listproducts =  loadall_product();
 $dstop10=loadall_sanpham_top10();
 if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
@@ -198,7 +199,18 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                             include "view/taikhoan/updateUser.php";
                         }
                             var_dump($_POST);
-                        break;     
+                        break;  
+                        case 'sanpham':
+                            if(isset($_GET['category_id']) && ($_GET['category_id']> 0)){
+                                $category_id = $_GET['category_id']; 
+                                $dssp=loadall_sanpham();
+                               $tencategory=load_ten_dm($category_id);
+                                
+                                include "view/product.php";
+                            }else{
+                                include "view/home.php";
+                            }                
+                            break;   
         default:
             include "view/home.php";
             break;
