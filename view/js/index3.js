@@ -1,35 +1,6 @@
-function LocalStorageService() {
-  return {
-      get(itemName) {
-          const item = localStorage.getItem(itemName);
-          // const numPatt = new RegExp(/^\d+$/);
-          // const jsonPatt = new RegExp(/[\[\{].*[\}\]]/);
-          if (item) {
-              return JSON.parse(item)
-          }
-          else {
-              return null;
-          }
-      },
-
-      set(itemName, item) {
-          if (typeof item === "object") {
-              localStorage.setItem(itemName, JSON.stringify(item));
-          } else {
-              localStorage.setItem(itemName, item);
-          }
-      },
-
-      remove(itemName) {
-          localStorage.removeItem(itemName);
-      }
-  }
-
-}
-
-var localStorageService = LocalStorageService()
 
 $(document).ready(function () {
+  
   $(document).scroll(function () {
     const header = document.querySelector(".header");
     if (window.scrollY > 20) {
@@ -38,9 +9,23 @@ $(document).ready(function () {
       header.classList.remove("header-active");
     }
   });
+  $(document).scroll(function () {
+    const header = document.querySelector(".nav-menu");
+    if (window.scrollY > 20) {
+      header.classList.add("nav-menu-active");
+    } else {
+      header.classList.remove("nav-menu-active");
+    }
+  });
   $("#nav-item-user").click(function () {
     const loginuser = document.querySelector(".login-user");
-    loginuser.style.display = "flex";
+    loginuser.style.display = "block";
+    const backdrop = document.querySelector(".backdrop");
+    backdrop.style.display = "block";
+  })
+  $(".bl-user").click(function () {
+    const loginuser = document.querySelector(".login-user");
+    loginuser.style.display = "block";
     const backdrop = document.querySelector(".backdrop");
     backdrop.style.display = "block";
   })
@@ -150,10 +135,4 @@ $(document).ready(function () {
       }
     },
   });
-
-
-
- 
-  
-  
 });

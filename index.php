@@ -1,3 +1,4 @@
+
 <?php
 ob_start();
 @session_start();
@@ -8,9 +9,10 @@ include "model/product.php";
 include "model/cart.php";
 include "global.php";
 include "view/header.php";
+include "model/categorys.php";
 include "model/comment.php";
 if (!isset($_SESSION['mycart'])) $_SESSION['mycart'] = [];
-
+$dsdm = loadall_categorys();
 $listproducts =  loadall_product();
 $dstop10=loadall_sanpham_top10();
 if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
@@ -22,6 +24,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 if(strlen($_POST['password'])>=8){
                     if($_POST['password']==$_POST['re-pass']){
                         $_SESSION['erro-done']="Đăng ký thành công ";
+                        adduser($_POST['username'],$_POST['password'],$_POST['email'],$_POST['phone'],$_FILES['file']['name'],$_POST['adr'],$_POST['vaitro']);
                        echo "<script>
                        alert('Bạn đã đăng ký thành công.');
                     </script>";
@@ -147,16 +150,18 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     session_destroy(); 
                         include "view/taikhoan/dangky.php";
                     break;
-                case "chitiet":
-                $id = $_GET['id'];
-                $query = "select * from products where product_id=".$id;
-                $query1 = "select * from comments where comment_product=".$id;
-                $comment=pdo_query($query1);
-                // $query2 = "select * from users where user_id=".$comment[0]['comment_user'];
-                $product=pdo_query_one($query);
-                include "view/productdesc.php";
-                break;
-                    break;
+                    case "chitiet":
+                        $id = $_GET['id'];
+                        $query = "select * from products where product_id=".$id;
+                        $loadone = loadone_product($id);
+                        extract($loadone);
+                        $spcungloai =load_sanpham_cungloai($id,$product_category);
+                        $query1 = "select * from comments where comment_product=".$id;
+                        $comment=pdo_query($query1);
+                        // $query2 = "select * from users where user_id=".$comment[0]['comment_user'];
+                        $product=pdo_query_one($query);
+                        include "view/productdesc.php";
+                        break;
                 case "binhluan": 
                     $comment = $_POST['coment'];
                     $user = $_SESSION['user_id'];
@@ -198,7 +203,19 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                             include "view/taikhoan/updateUser.php";
                         }
                             var_dump($_POST);
-                        break;     
+                        break;  
+                        case 'sanpham':
+                            if(isset($_GET['category_id']) && ($_GET['category_id']> 0)){
+                                $category_id = $_GET['category_id']; 
+                                $dssp=loadall_sanpham();
+                               $tencategory=load_ten_dm($category_id);
+                                
+                                include "view/product.php";
+                            }else{
+                                include "view/home.php";
+                            }                
+                            break;
+   
         default:
             include "view/home.php";
             break;

@@ -1,4 +1,19 @@
 <!--Banner-->
+<ul class="nav-menu">
+                            <?php 
+                                foreach ($dsdm as $dm) {
+                                    extract($dm);
+                                    
+                                    $linkdm = "index.php?act=sanpham&category_id=".$category_id; 
+                                    
+                                    echo '
+                                        <li class="nav-drop"><a href="'.$linkdm.'" id="item-drop">'.$category_name.'</a></li>
+                                    ';
+                                }
+                            ?>
+                            <img src="view/img/item/icon-sale.png" alt="">
+                        </ul>
+                        
 <div class="banner">
   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
@@ -59,7 +74,7 @@
             <input type="text" hidden name="product_name" value="<?= $product_name ?>">
             <input type="text" hidden name="product_image" value="<?= $product_image ?>">
             <input type="number" hidden name="product_price" value="<?= $product_sale ?>">
-            <input type="submit" class="product-btn-cart" style="width:250px ;" name="addtocart" value="Mua ngay"></input>
+            <input type="submit" class="btn btn-dark" style="width:250px ;" name="addtocart" value="Mua ngay"></input>
           </form>
         </div>
         </a>
@@ -68,7 +83,7 @@
     <div class="swiper-pagination"></div>
   </div>
 
-  <div class="swiper mySwiper">
+  <div class="swiper mySwiper mt-4">
     <h3>Sản Phẩm Xem Nhiều</h3>
     <div class="swiper-wrapper">
       <?php foreach ($dstop10 as $prodcuts) {
@@ -96,13 +111,13 @@
             <input type="text" hidden name="product_name" value="<?= $product_name ?>">
             <input type="text" hidden name="product_image" value="<?= $product_image ?>">
             <input type="number" hidden name="product_price" value="<?= $product_sale ?>">
-            <input type="submit" class="product-btn-cart" style="width:250px ;" name="addtocart" value="Mua ngay"></input>
+            <input type="submit" class="btn btn-dark" style="width:250px ;" name="addtocart" value="Mua ngay"></input>
           </form>
         </div>
         </a>
       <?php } ?>
     </div>
-    <div class="swiper-button-next"></div>
+    <div class="swiper-button-next "></div>
     <div class="swiper-button-prev"></div>
   </div>
   <div class="swiper mySwiper">
@@ -132,7 +147,7 @@
             <input type="text" hidden name="product_name" value="<?= $product_name ?>">
             <input type="text" hidden name="product_image" value="<?= $product_image ?>">
             <input type="number" hidden name="product_price" value="<?= $product_sale ?>">
-            <input type="submit" class="product-btn-cart" style="width:250px ;" name="addtocart" value="Mua ngay"></input>
+            <input type="submit" class="btn btn-dark" style="width:300px ;" name="addtocart" value="Mua ngay"></input>
           </form>
         </div>
         
@@ -140,8 +155,8 @@
       
     </div>
     <div class="d-flex justify-content-center">
-        <a class="btn-collapse " type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-          xem thêm
+        <a class="btn-collapse mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          XEM THÊM
           <i class="fa-solid fa-arrow-right"></i></a>
     </div>
   </div>

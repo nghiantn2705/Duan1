@@ -1,4 +1,18 @@
-<div class="container mb">
+<ul class="nav-menu">
+                            <?php 
+                                foreach ($dsdm as $dm) {
+                                    extract($dm);
+                                    
+                                    $linkdm = "index.php?act=sanpham&category_id=".$category_id; 
+                                    
+                                    echo '
+                                        <li class="nav-drop"><a href="'.$linkdm.'" id="item-drop">'.$category_name.'</a></li>
+                                    ';
+                                }
+                            ?>
+                            <img src="view/img/item/icon-sale.png" alt="">
+                        </ul>
+<div class="container mb mt-4">
     <div class="boxtrai mr">
         <div class=" mb">
             <div class="boxcontent" style="text-align:center">

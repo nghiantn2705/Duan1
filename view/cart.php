@@ -1,7 +1,21 @@
+<ul class="nav-menu">
+                            <?php 
+                                foreach ($dsdm as $dm) {
+                                    extract($dm);
+                                    
+                                    $linkdm = "index.php?act=sanpham&category_id=".$category_id; 
+                                    
+                                    echo '
+                                        <li class="nav-drop"><a href="'.$linkdm.'" id="item-drop">'.$category_name.'</a></li>
+                                    ';
+                                }
+                            ?>
+                            <img src="view/img/item/icon-sale.png" alt="">
+                        </ul>
 <div class="container mb">
     <div class="boxtrai mr">
         <div class="mb ">
-        <h3 class="boxtitle text-center" style="color:red">Sản phẩm bạn đã chọn</h3>
+        <h3 class="boxtitle text-center mt-4 mb-3" style="color:red">Sản phẩm bạn đã chọn</h3>
         <div class="boxcontent cart px-2 ">
                 <table class="table table-striped table-striped-columns table-hover table-bordered">
                   <?php

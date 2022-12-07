@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="view/css/index2.css">
+  <link rel="stylesheet" href="view/css/index34.css">
 
 </head>
 
@@ -24,7 +24,7 @@
           </div>
           <div class="nav-phone"><i class="fa-solid fa-phone"></i><a href="">0862738874</a></div>
         </div>
-        <a href="index.php?act=" class="logo"><img src="view/img/logo.png" alt=""></a>
+        <div><a href="index.php?act=" class="logo"><img src="view/img/logo.png" alt=""></a></div>
         <ul class="nav-icon mt-1 me-2">
           <li class="nav-item">
             <form action="" method="post">
@@ -42,49 +42,16 @@
         </ul>
 
       </div>
-      <ul class="nav-menu">
-        <li class="nav-drop">
-          <a href="#" id="item-drop">
-            <img src="view/img/item/icon-4.png" alt="">
-            <span>Apple</span>
-          </a>
-        </li>
-        <li class="nav-drop">
-          <a href="#" id="item-drop">
-            <img src="view/img/item/icon.png" alt="">
-            <span>Đồng Hồ</span>
-          </a>
-
-        </li>
-        <li class="nav-drop">
-          <a href="#" id="item-drop">
-            <img src="view/img/item/icon-1.png" alt="">
-            <span>Smart Watch</span>
-          </a>
-        </li>
-        <li class="nav-drop">
-          <a href="#" id="item-drop">
-            <img src="view/img/item/icon-2.png" alt="">
-            <span>Phụ Kiện</span>
-          </a>
-        </li>
-        <li class="nav-drop">
-          <a href="#" id="item-drop">
-            <img src="view/img/item/icon-3.png" alt="">
-            <span>Tin Tức</span>
-          </a>
-        </li>
-        <img src="view/img/item/icon-sale.png" alt="">
-      </ul>
 
       <div class="login-user">
 
         <?php if (isset($_SESSION['user'])) {
-          echo " <h4>Xin chào</h4>
-        <ul>
-        <li><a href='index.php?act=logout'>Đăng xuất</a></li>
+          echo " <h3>Xin chào, </h3>
+        <div>
+        <li><a href='index.php?act=mybill'>Đơn hàng của tôi</a></li>
         <span class='' type='submit' id='btn-cn'>Cập nhập tài khoản</span>
-        </ul>";
+        <li><a href='index.php?act=logout'>Đăng xuất</a></li>
+        </div>";
         } else {
           echo "<form action='index.php?act=dangnhap' method='POST'>
           <p>Đăng Nhập</p>
@@ -97,17 +64,6 @@
             <span class='btn btn-primary' type='submit' id='btn-dk'>Đăng ký</span>
           </div>
         </form>
-        <div class='login-gg-fb'>
-          <a href='#' class='login-gg'>
-            <i class='fa-brands fa-google'></i>
-            <span>Google</span>
-          </a>
-          <p>Hoặc</p>
-          <a href='#' class='login-fb'>
-            <i class='fa-brands fa-facebook'></i>
-            <span>Facebook</span>
-          </a>
-        </div>
         ";
         } ?>
 

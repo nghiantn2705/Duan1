@@ -23,26 +23,17 @@
         $listsanpham=pdo_query($sql);
         return $listsanpham;
     }
-    function loadall_sanpham($kyw="",$iddm=0){
-        $sql = "select * from sanpham where 1";
-        if($kyw!=""){
-            $sql.=" and name like '%".$kyw."%'";
-        }
-        if($iddm>0){
-            $sql.=" and iddm = '".$iddm."'";
-        }
-
-        $sql.=" order by id desc";
-        // nỗi chuỗi .= cách khoảng
+    function loadall_sanpham(){
+        $sql = "select * from products";
         $listsanpham=pdo_query($sql);
         return $listsanpham;
     }
-    function load_ten_dm($iddm){
-        if($iddm>0){
-            $sql="select * from danhmuc where id =".$iddm;
+    function load_ten_dm($category_id){
+        if($category_id>0){
+            $sql="select * from categorys where category_id =".$category_id;
         $dm=pdo_query_one($sql);
         extract($dm);
-        return $name;
+        return $category_name;
         }else{
             return "";
         }
@@ -55,13 +46,14 @@
     }
     
     // load danh muc san pham chung loai
-    function load_sanpham_cungloai($id,$iddm){
-        $sql="select * from sanpham where iddm =".$iddm." AND id <> ".$id;
-        $listsanpham=pdo_query($sql);
+    function load_sanpham_cungloai($id,$product_category){
+        $sql= "select * from products where product_category = ".$product_category." and product_id <>".$id;
+        $listsanpham =pdo_query($sql);
         return $listsanpham;
         // $sp=pdo_query_one($sql);
         // return $sp;
     }
+
     function update_product($product_id,$product_category,$product_name,$product_image,$product_price,$product_sale,$product_size,$product_color,$product_type,$product_wire,$product_origin,$product_insurance){
 $sql = "update products set product_category= '".$product_category."', product_name= '".$product_name."',   product_image= '".$product_image."',product_price= '".$product_price."', product_sale= '".$product_sale."', product_size= '".$product_size."', product_color= '".$product_color."', product_type= '".$product_type."', product_wire= '".$product_wire."',  product_origin= '".$product_origin."',product_insurance= '".$product_insurance."'  where product_id =".$product_id;
             pdo_execute($sql);

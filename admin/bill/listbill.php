@@ -20,7 +20,6 @@
                 <table class="table table-striped-columns table-hover table-bordered my-3">
                     <thead>
                         <tr>
-                            <th></th>
                             <th>MÃ ĐƠN HÀNG</th>
                             <th>KHÁCH HÀNG
                             </th>
@@ -46,7 +45,7 @@
                         ?>
                             <tr>
 
-                                <td><input type="checkbox" name="" id=""></td>
+                            
                                 <td><?= $bill_id ?></td>
                                 <td><?= $kh ?></td>
                                 <td><?= $countsp ?></td>
