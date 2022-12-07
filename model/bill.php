@@ -1,5 +1,5 @@
 <?php
- function loadall_bill($kyw="",$iduser=0){
+ function loadall_bill_admin($kyw="",$iduser=0){
 
     $sql = "select * from bill where 1";
     if($iduser >0) {

@@ -5,12 +5,6 @@
         <input type="text" name="kyw" placeholder="Nhập mã đơn hàng" class="btn btn-light">
         <input type="submit" name="listok" value="Tìm kiếm" class="btn btn-success">
     </form>
-    <div class=" mt-3">
-
-                <input type="button" class="btn btn-success" value="Chọn tất cả">
-                <input type="button" class="btn btn-success" value="Bỏ chọn tất cả">
-                <input type="button" class="btn btn-success" value="Xóa các mục tất tả">
-     </div>
     </div>
     
     <div class="container text-center mb-3 ">
@@ -33,12 +27,13 @@
                             </th>
 
                         </tr>
+                        <!-- <h6 style="color: red;">Số Điện Thoại Khách Hàng: </h6> -->
                     </thead>
                     <tbody class="align-middle">
                         <?php
                         foreach ($listbill as $bill) {
                             extract($bill);
-                            $kh = $bill["bill_name"] . '<br> ' . $bill["bill_email"] . '<br> ' . $bill["bill_address"] . '<br> ' . $bill["bill_phone"];
+                            $kh ='<h6 style="color: red;">Tên:</h6>'. $bill["bill_name"] . '<br> '.'<h6 style="color: red;">Email: </h6>' . $bill["bill_email"] . '<br> '.'<h6 style="color: red;">Địa Chỉ: </h6>'  . $bill["bill_address"] . '<br> '.'<h6 style="color: red;">Số Điện Thoại: </h6>'  . $bill["bill_phone"];
                             $ttdh  = get_ttdh($bill["bill_status"]);
                             $countsp = loadall_cart_count($bill["bill_id"]);
                             $updatebill = "index.php?act=updatebill&bill_id=" . $bill_id;

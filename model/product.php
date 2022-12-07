@@ -39,12 +39,17 @@
         }
         
     }
-    function loadall_sanpham_top10(){
-        $sql="select * from products where 1 order by product_view desc limit 0,10";
+    function loadall_sanphamsale_top10(){
+        $sql="select * from products where 1 order by product_sale desc limit 0,10";
         $listsanpham=pdo_query($sql);
         return $listsanpham;
     }
-    
+
+    function loadall_sanphamview_top10(){
+        $sql="select * from products where 1 order by product_view desc limit 0,8";
+        $listsanpham=pdo_query($sql);
+        return $listsanpham;
+    }
     // load danh muc san pham chung loai
     function load_sanpham_cungloai($id,$product_category){
         $sql= "select * from products where product_category = ".$product_category." and product_id <>".$id;

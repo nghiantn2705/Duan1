@@ -25,7 +25,7 @@
         <div class="product-info">
           <div class="product-name-1 fs-2"><?php echo $product['product_name']  ?></div>
         </div>
-        <div class="product-price-discount mb-2">Giá: <span style="color: red;"><?php echo $product['product_sale']  ?>đ</span><span class="line-through"><?php echo $product['product_price']  ?>đ </span></div>
+        <div class="product-price-discount mb-2 ">Giá: <span class="span-numbers" style="color: red;"><?php echo $product['product_sale']  ?>đ</span><span class="line-through span-numbers"><?php echo $product['product_price']  ?>đ </span></div>
       </div>
       <div class="container border">
         <table class="table table-striped">

@@ -12,7 +12,7 @@ if(is_array($update_product)){
 ?>
 <div class="title-usser">
                 <div class=" frmtitle my-3">
-                    <h1 >THÊM MỚI SẢN PHẨM</h1>
+                    <h1 >CẬP NHẬT SẢN PHẨM</h1>
                 </div>
                 <div class=" frmcontent w-50">
                     <form action="index.php?act=updatespham" method="post" enctype="multipart/form-data">

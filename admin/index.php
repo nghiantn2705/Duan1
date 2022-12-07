@@ -237,14 +237,14 @@ if (isset($_GET['act'])) {
                 }else{
                     $kyw = "";
                 }
-                $listbill =  loadall_bill($kyw,0);
+                $listbill =  loadall_bill_admin($kyw,0);
                 include "bill/listbill.php";
                 break;
             case 'updatebill':
                     if (isset($_GET['bill_id']) && ($_GET['bill_id'] > 0)) {
                         $update_bill = loadone_ttbill($_GET['bill_id']);
                     }
-                    $listbill =  loadall_bill();
+                    $listbill =  loadall_bill_admin();
                     include "bill/updatebill.php";
                     break;
             // case 'updatebill':
@@ -258,7 +258,7 @@ if (isset($_GET['act'])) {
                     update_bill($bill_id,$bill_status);
                     $thongbao = "Cập nhật thành công thành công";
                 }
-                $listbill =  loadall_bill();
+                $listbill =  loadall_bill_admin();
                 include "bill/listbill.php";
                 break;    
 

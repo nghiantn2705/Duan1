@@ -14,7 +14,8 @@ include "model/comment.php";
 if (!isset($_SESSION['mycart'])) $_SESSION['mycart'] = [];
 $dsdm = loadall_categorys();
 $listproducts =  loadall_product();
-$dstop10=loadall_sanpham_top10();
+$dstop10=loadall_sanphamview_top10();
+$dstop10sale=loadall_sanphamsale_top10();
 if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
@@ -49,8 +50,11 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
 
             $username =$_POST['username'];
             $password = $_POST['password'];
-            $user = select();
-            $_SESSION= array();
+            $user = select();    
+            $checkuser = checkuser($username,$password);
+            if(is_array($checkuser)){
+                $_SESSION['users'] = $checkuser;
+            }
             foreach($user as $value){
                 if($username==$value['user_name'] && $password==$value['user_password']){
                     $_SESSION['user_id']=$value['user_id'];
@@ -119,7 +123,8 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             break;
         case 'billcomfirm':
             if (isset($_POST['dongydathang']) && ($_POST['dongydathang'])) {
-                // if(isset($_SESSION['users'])) {$iduser = $_SESSION['user']['user_id'];}
+                if(isset($_SESSION['users'])) {$iduser = $_SESSION['users']['user_id'];}
+                // var_dump($_SESSION['users']['user_id']);die;
                 $user_name = $_POST['user_name'];
                 $user_email = $_POST['user_email'];
                 $user_address = $_POST['user_address'];
@@ -127,7 +132,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $pttt = $_POST['pttt'];
                 $tongdonhang = tongdonhang();
                 // Tạo bill
-                $idbill = insert_bill($user_name, $user_email, $user_address, $user_phone, $pttt, $tongdonhang);
+                $idbill = insert_bill($iduser, $user_name, $user_email, $user_address, $user_phone, $pttt, $tongdonhang);
                 // var_dump($idbill);die;
                 // Insert into cart: $session['mycart'] $idbill
 
@@ -143,7 +148,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             include "view/billconfirm.php";
             break;
             case 'mybill':
-                $listbill=loadall_bill($_SESSION['user']['user_id']);
+                $listbill=loadall_bill($_SESSION['users']['user_id']);
                 include "view/mybill.php";
                 break;
                 case "form":

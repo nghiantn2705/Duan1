@@ -38,9 +38,9 @@ function viewCart($del)
                             <tr class="text-center align-middle" >
                               <td ><img src="' . $image . '" alt="" class="cart-img"></td>
                               <td >' . $cart[1] . '</td>
-                              <td class="dongia">' . $cart[3] . '</td>
+                              <td class="span-numbers">' . $cart[3] . '</td>
                               <td >' . $cart[4] . '</td>
-                              <td >' . $moneyy . '</td>
+                              <td class="span-numbers">' . $moneyy . '</td>
                               <td >' . $deleteProduct_td . '</td>
                             </tr>  
                            
@@ -50,7 +50,7 @@ function viewCart($del)
   echo '
                             <tr>
                             <td colspan="4">Tổng tiền đơn hàng</td>
-                            <td>' . $tong . '</td>
+                            <td class="span-numbers text-center" >' . $tong . '</td>
                             </td>
                             <td>' . $deleteproduct2 . '</td>
                           </tr> 
@@ -106,8 +106,8 @@ function tongdonhang(){
   return $tong;
 }
 
-function insert_bill($user_name,$user_email,$user_address,$user_phone,$pttt,$tongdonhang){
-  $sql="insert into bill(bill_name,bill_address,bill_phone,bill_pttt,bill_email,bill_total) values('$user_name', '$user_address', '$user_phone','$pttt','$user_email','$tongdonhang')";
+function insert_bill($iduser,$user_name,$user_email,$user_address,$user_phone,$pttt,$tongdonhang){
+  $sql="insert into bill(iduser,bill_name,bill_address,bill_phone,bill_pttt,bill_email,bill_total) values('$iduser','$user_name', '$user_address', '$user_phone','$pttt','$user_email','$tongdonhang')";
   return pdo_execute_return_lastInsertId($sql);
 }
 
@@ -127,10 +127,16 @@ function loadall_cart($idbill){
   $bill=pdo_query($sql);
   return $bill;
 }
-function loadall_cart_count($cart_bill){
-  $sql = "select * from cart where cart_bill =".$cart_bill;
+function loadall_cart_count($idbill){
+  $sql = "select * from cart where cart_bill =".$idbill;
   $bill=pdo_query($sql);
-  return sizeof($bill);
+  return sizeof($bill);//số  lượng mặt hàng
+}
+
+function loadall_bill($iduser){
+  $sql = "select * from bill where iduser =".$iduser;
+  $listbill=pdo_query($sql);
+  return $listbill;
 }
 ////////////////////////////////////////////////////////////////////////
 // function loadall_bill($kyw="",$iduser=0){
