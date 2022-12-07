@@ -46,9 +46,9 @@
     }
     
     // load danh muc san pham chung loai
-    function load_sanpham_cungloai($id,$iddm){
-        $sql="select * from sanpham where iddm =".$iddm." AND id <> ".$id;
-        $listsanpham=pdo_query($sql);
+    function load_sanpham_cungloai($id,$product_category){
+        $sql= "select * from products where product_category = ".$product_category." and product_id <>".$id;
+        $listsanpham =pdo_query($sql);
         return $listsanpham;
         // $sp=pdo_query_one($sql);
         // return $sp;
