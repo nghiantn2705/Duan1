@@ -18,7 +18,7 @@
                 <table class="table table-striped table-striped-columns table-hover table-bordered">
                     <thead class="text-center">
                         <tr>
-                            <th></th>
+                        
                             <th>ID</th>
                             <th>Tên đăng nhập </th>
                             <th>Mật khẩu</th>
@@ -55,7 +55,7 @@
                             // }
                         ?>
                             <tr>
-                                <td><input type="checkbox" name="" id=""></td>
+                            
                                 <td><?= $user_id ?></td>
                                 <td><?= $user_name ?></td>
                                 <td><?= $user_password ?></td>          

@@ -12,15 +12,7 @@
     $listbill=pdo_query($sql);
     return $listbill;
   }
-  function loadall_bill_ud(){
-    $sql = "select * from bill order by bill_id";
-    $listbill=pdo_query($sql);
-    return $listbill;
-  }
-  function delete_bill($bill_id){
-    $sql="delete from bill where bill_id=".$bill_id;
-    pdo_execute($sql);
-  }
+
   function update_bill($bill_id,$bill_status){
     $sql="update bill set bill_status = '".$bill_status."' where bill_id =".$bill_id;
     pdo_execute($sql);

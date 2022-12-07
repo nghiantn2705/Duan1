@@ -53,6 +53,7 @@
         // $sp=pdo_query_one($sql);
         // return $sp;
     }
+
     function update_product($product_id,$product_category,$product_name,$product_image,$product_price,$product_sale,$product_size,$product_color,$product_type,$product_wire,$product_origin,$product_insurance){
 $sql = "update products set product_category= '".$product_category."', product_name= '".$product_name."',   product_image= '".$product_image."',product_price= '".$product_price."', product_sale= '".$product_sale."', product_size= '".$product_size."', product_color= '".$product_color."', product_type= '".$product_type."', product_wire= '".$product_wire."',  product_origin= '".$product_origin."',product_insurance= '".$product_insurance."'  where product_id =".$product_id;
             pdo_execute($sql);

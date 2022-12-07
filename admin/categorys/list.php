@@ -6,7 +6,7 @@
         <form action="index.php?act=categorys-search" method="post">
             <div class="mb10 text-center mb-4 ">
                 <form action="">
-                <input type="text" width="300px" class="btn btn-success" placeholder="tìm kiếm danh mục" name="tukhoa">
+                <input type="text" width="300px" class="btn btn-light" placeholder="Tìm kiếm danh mục" name="tukhoa">
                 <input type="submit" class="btn btn-success" name="timkiem" value="Tìm kiếm">
 
                 </form>
@@ -18,7 +18,7 @@
                 <table class="table table-striped table-striped-columns table-hover table-bordered">
                     <thead class="text-center">
                         <tr>
-                            <th></th>
+        
                             <th>MÃ LOẠI</th>
                             <th>TÊN LOẠI</th>
                             <th>Action</th>
@@ -32,7 +32,7 @@
                             $deletedm = "index.php?act=deletedm&category_id=".$category_id;
                         ?>
                             <tr>
-                                <td><input type="checkbox" name="" id=""></td>
+                            
                                 <td><?= $category_id ?></td>
                                 <td><?= $category_name ?></td>
                                 <td>

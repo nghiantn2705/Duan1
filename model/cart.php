@@ -19,7 +19,7 @@ function viewCart($del)
       <th scope="col">Sản Phẩm</th>
       <th scope="col">Đơn giá</th>
       <th scope="col">Số lượng</th>
-      <th scope="col">thành tiền</th>
+      <th scope="col">Thành tiền</th>
       <th scope="col">' . $del_th . '</th>
     </tr>
   </thead>
@@ -38,7 +38,7 @@ function viewCart($del)
                             <tr class="text-center align-middle" >
                               <td ><img src="' . $image . '" alt="" class="cart-img"></td>
                               <td >' . $cart[1] . '</td>
-                              <td >' . $cart[3] . '</td>
+                              <td class="dongia">' . $cart[3] . '</td>
                               <td >' . $cart[4] . '</td>
                               <td >' . $moneyy . '</td>
                               <td >' . $deleteProduct_td . '</td>

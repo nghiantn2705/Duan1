@@ -240,13 +240,17 @@ if (isset($_GET['act'])) {
                 $listbill =  loadall_bill($kyw,0);
                 include "bill/listbill.php";
                 break;
-                case 'updatebill':
+            case 'updatebill':
                     if (isset($_GET['bill_id']) && ($_GET['bill_id'] > 0)) {
                         $update_bill = loadone_ttbill($_GET['bill_id']);
                     }
+                    $listbill =  loadall_bill();
                     include "bill/updatebill.php";
                     break;
-            
+            // case 'updatebill':
+    
+            //     include "bill/updatebill.php";
+            //     break;
             case 'updatebills':
                 if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
                     $bill_id = $_POST['bill_id'];
@@ -254,16 +258,9 @@ if (isset($_GET['act'])) {
                     update_bill($bill_id,$bill_status);
                     $thongbao = "Cập nhật thành công thành công";
                 }
-                $listbill =  loadall_bill_ud();
+                $listbill =  loadall_bill();
                 include "bill/listbill.php";
-                break;
-                case 'deletebill':
-                    if (isset($_GET['bill_id']) && ($_GET['bill_id'] > 0)) {
-                        delete_bill($_GET['bill_id']);
-                    }
-                    $listbill =  loadall_bill_ud();
-                    include "bill/listbill.php";
-                    break; 
+                break;    
 
             // Thống kê 
         case 'thongke':
