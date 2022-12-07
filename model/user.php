@@ -29,4 +29,9 @@ function adduser($username,$password,$email,$sdt,$image,$diachi,$vaitro){
     // move_uploaded_file($dan,'view/img/'.$image);
     pdo_execute($query);
 }
+function checkuser($username,$password){
+    $sql = "select * from users where user_name ='".$username."' and user_password = '".$password."'";
+    $sp=pdo_query_one($sql);
+    return $sp;
+}
 ?>

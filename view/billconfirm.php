@@ -28,7 +28,7 @@
         <div class=" mb">
             <div class="boxtitle">THÔNG TIN ĐƠN HÀNG</div>
             <div class="boxcontent" style="text-align:center">
-                <h1>STT-<?=$bill['bill_id']?></h1>
+                <h1>WolfWatch-<?=$bill['bill_id']?></h1>
                 <li>Tổng đơn hàng: <?=$bill['bill_total'];?></li> 
                 <li>Phương thức thanh toán: <?php   
                 if($bill['bill_pttt']==0){

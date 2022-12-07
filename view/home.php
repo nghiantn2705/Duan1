@@ -1,18 +1,18 @@
 <!--Banner-->
 <ul class="nav-menu">
-                            <?php 
-                                foreach ($dsdm as $dm) {
-                                    extract($dm);
+  <?php 
+  foreach ($dsdm as $dm) {
+    extract($dm);
                                     
-                                    $linkdm = "index.php?act=sanpham&category_id=".$category_id; 
+    $linkdm = "index.php?act=sanpham&category_id=".$category_id; 
                                     
-                                    echo '
-                                        <li class="nav-drop"><a href="'.$linkdm.'" id="item-drop">'.$category_name.'</a></li>
-                                    ';
-                                }
-                            ?>
-                            <img src="view/img/item/icon-sale.png" alt="">
-                        </ul>
+    echo '
+    <li class="nav-drop"><a href="'.$linkdm.'" id="item-drop">'.$category_name.'</a></li>
+    ';
+    }
+    ?>
+  <img src="view/img/item/icon-sale.png" alt="">
+</ul>
                         
 <div class="banner">
   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -47,9 +47,9 @@
 <div class="product">
 
   <div class="swiper mySwiper1 ">
-    <h3 class="">Sản Phẩm Bán Chạy</h3>
+    <h3 class="">Sản Phẩm Được Xem Nhiều</h3>
     <div class="swiper-wrapper ">
-      <?php foreach ($listproducts as $prodcuts) {
+      <?php foreach ($dstop10 as $prodcuts) {
         extract($prodcuts);
         $hinhpath = "upload/" . $product_image;
         if (is_file($hinhpath)) {
@@ -63,10 +63,10 @@
           <img src="" alt="">
           <div><?= $image ?></div>
           <div id="item-product">
-            <a href="#" class="product-name"><?= $product_name ?></a>
+            <a href="index.php?act=chitiet&id=<?php echo $product_id ?>" class="product-name"><?= $product_name ?></a>
             <div class="body-product">
-              <h4 class="price-product my-2"><?= $product_price ?></h4>
-              <h4 class="price-sale-product">Giá Khuyến Mãi: <span><?= $product_sale ?></span> đ</h4>
+              <h4 class="price-product my-2 span-numbers">Giá: <?= $product_price ?> đ</h4>
+              <h4 class="price-sale-product">Giá Khuyến Mãi: <span class="span-numbers"><?= $product_sale ?></span> đ</h4>
             </div>
           </div>
           <form action="index.php?act=addtocart" method="POST">
@@ -84,9 +84,9 @@
   </div>
 
   <div class="swiper mySwiper mt-4">
-    <h3>Sản Phẩm Xem Nhiều</h3>
+    <h3>Sản Phẩm Giảm Giá Nhiều</h3>
     <div class="swiper-wrapper">
-      <?php foreach ($dstop10 as $prodcuts) {
+      <?php foreach ($dstop10sale as $prodcuts) {
         extract($prodcuts);
         $hinhpath = "upload/" . $product_image;
         if (is_file($hinhpath)) {
@@ -100,10 +100,10 @@
           <img src="" alt="">
           <div><?= $image ?></div>
           <div id="item-product">
-            <a href="#" class="product-name"><?= $product_name ?></a>
+          <a href="index.php?act=chitiet&id=<?php echo $product_id ?>" class="product-name"><?= $product_name ?></a>
             <div class="body-product">
-              <h4 class="price-product"><?= $product_price ?></h4>
-              <h4 class="price-sale-product">Giá Khuyến Mãi: <span><?= $product_sale ?></span> đ</h4>
+              <h4 class="price-product span-numbers">Giá: <?= $product_price ?> đ</h4>
+              <h4 class="price-sale-product">Giá Khuyến Mãi: <span class="span-numbers"><?= $product_sale ?></span> đ</h4>
             </div>
           </div>
           <form action="index.php?act=addtocart" method="POST">
@@ -136,10 +136,10 @@
           <img src="" alt="">
           <a href="index.php?act=chitiet&id=<?php echo $product_id ?>"> <?= $image ?></a>
           <div id="item-product">
-            <a href="#" class="product-name"><?= $product_name ?></a>
+          <a href="index.php?act=chitiet&id=<?php echo $product_id ?>" class="product-name"><?= $product_name ?></a>
             <div class="body-product">
-              <h4 class="price-product"><?= $product_price ?></h4>
-              <h4 class="price-sale-product">Giá Khuyến Mãi: <span><?= $product_sale ?></span> đ</h4>
+              <h4 class="price-product span-numbers">Giá: <?= $product_price ?> đ</h4>
+              <h4 class="price-sale-product">Giá Khuyến Mãi: <span  class="span-numbers"><?= $product_sale ?></span> đ</h4>
             </div>
           </div>
           <form action="index.php?act=addtocart" method="POST">

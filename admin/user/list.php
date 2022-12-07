@@ -10,7 +10,7 @@
             <form action="index.php?act=users-search" method="post">
             <div class="mb10 text-center mb-4 ">
                 <form action="">
-                <input type="text" width="300px" class="btn btn-light" placeholder="tìm kiếm sản phẩm" name="tukhoa">
+                <input type="text" width="300px" class="btn btn-light" placeholder="Tìm kiếm sản phẩm" name="tukhoa">
                 <input type="submit" class="btn btn-success" name="timkiem" value="Tìm kiếm">
 
           
@@ -19,20 +19,20 @@
                     <thead class="text-center">
                         <tr>
                         
-                            <th>ID</th>
-                            <th>Tên đăng nhập </th>
+                            <th>ID Khách hàng</th>
+                            <th>Tên Đăng Nhập </th>
                             <th>Mật khẩu</th>
                             <th>Ảnh
                             
-                            <th>Họ tên
+                            <th>Họ Tên
                             
-                            <th>Địa chỉ
+                            <th>Địa Chỉ
                             
-                            <th>Số điện thoại</th>
+                            <th>Số Điện Thoại</th>
                             <th>Email
                             
-                            <th>Vai trò</th>
-                            <th>action</th>
+                            <th>Vai Trò</th>
+                            <th>Action</th>
                             <!-- <th>Loại Máy</th>
                             <th>Chống Nước</th>
                             <th>Xuất Xứ</th>

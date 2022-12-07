@@ -1,6 +1,6 @@
 <div class="">
 
-    <h1 class="text-center my-3">THÊM MỚI LOẠI HÀNG</h1>
+    <h1 class="text-center my-3">CẬP NHẬT LOẠI HÀNG</h1>
 
     <div class="form text-center">
         <form action="index.php?act=add-categorys" method="post">

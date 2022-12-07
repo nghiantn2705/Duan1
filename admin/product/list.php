@@ -41,8 +41,8 @@
                             <th>Chống Nước</th>
                             <th>Xuất Xứ</th>
                             <th>Bảo Hành</th>
-                            <th>commnet</th>
-                            <th>action</th>
+                            <th>Bình Luận</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody class="align-middle text-center">
