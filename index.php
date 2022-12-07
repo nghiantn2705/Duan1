@@ -151,6 +151,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 case "chitiet":
                 $id = $_GET['id'];
                 $query = "select * from products where product_id=".$id;
+                $loadone = loadone_product($id);
+                extract($loadone);
+                $spcungloai =load_sanpham_cungloai($id,$product_category);
                 $query1 = "select * from comments where comment_product=".$id;
                 $comment=pdo_query($query1);
                 // $query2 = "select * from users where user_id=".$comment[0]['comment_user'];
