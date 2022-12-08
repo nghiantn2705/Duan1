@@ -39,8 +39,7 @@
                 <i class="fas fa-gem me-3 text-secondary"></i>Wolf Watch
               </h6>
               <p>
-                Here you can use rows and columns to organize your footer content. Lorem ipsum
-                dolor sit amet, consectetur adipisicing elit.
+                Chào mừng đến với bình nguyên vô tận
               </p>
             </div>
         

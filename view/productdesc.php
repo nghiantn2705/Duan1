@@ -104,7 +104,17 @@
 
           $query2 = "select * from users where user_id=" . $value['comment_user'];
           $user = pdo_query_one($query2);
-          echo " <div class='mb-20'><div class='user-cmt'>" . $user['user_name'] . ": <span class='noidung'>" . $value['comment_content'] . "</span> </div> </div>";
+          echo "<div class='mb-20'>
+          <div class='user-cmt'>
+            <div class=''>
+            <span class='text'>". $user['user_name']." :</span> 
+            <span class='noidung'>" . $value['comment_content']."</span>
+            </div>
+            <div class='date-cmt'>
+            <i class='justify-content-end'>". $value['comment_date'] ."</i>
+            </div>
+          </div>
+        </div>";
         } ?>
         <?php
         if (isset($_SESSION['user'])) {
