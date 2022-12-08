@@ -92,22 +92,39 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             header('Location: index.php');
             break;
         case 'addtocart':
-            if (isset($_POST['addtocart'])) {
+            if (isset($_POST['addtocart'])&&($_POST['addtocart'])) {
                 $product_id = $_POST['product_id'];
                 $product_name = $_POST['product_name'];
                 $product_image = $_POST['product_image'];
                 $product_price = $_POST['product_price'];
                 $amount = 1;
                 $moneyy = $amount * $product_price;
-                
-                $productAdd = [$product_id, $product_name, $product_image, $product_price, $amount, $moneyy];
-               
-                
-                //đẩy mảng con vào mảng cha, mảng cha là session mycart, mảng con là productadd
-                array_push($_SESSION['mycart'], $productAdd);   
-                // var_dump($_SESSION['mycart']);
+                $i=0;
+                $fl=0;
+                // var_dump($money);
                 // die();
-            };
+                //tìm và so sánh
+               if(isset($_SESSION['mycart'])&&(count($_SESSION['mycart'])>0)){
+                    foreach($_SESSION['mycart'] as $sp){
+                        if($sp[0] == $product_id){
+                            //cập nhật mới số lượng
+                            $amount +=$sp[4];
+                            $fl=1;
+                            //cập nhật mới số lượng vào giỏ hàng
+                            $_SESSION['mycart'][$i][4]=$amount;
+                            break;
+                        }
+                        $i++;
+                    }
+               }
+            //    var_dump($_SESSION['mycart']);die;
+               //khi số lượng ban đầu ko thay đổi thì thêm mới sp vào giỏ hàng
+               if($fl==0){
+                $productAdd = [$product_id, $product_name, $product_image, $product_price, $amount, $moneyy];
+                //đẩy mảng con vào mảng cha, mảng cha là session mycart, mảng con là productadd
+                array_push($_SESSION['mycart'], $productAdd);
+               }
+            }
             include "view/cart.php";
             break;
         case 'deleteCart':

@@ -39,7 +39,7 @@
                                    <tr>
                                    <td>WolfWatch'.$bill['bill_id'].'</td>
                                    <td>'.$countsp.'</td>
-                                   <td>'.$bill['bill_total'].'</td>
+                                   <td class="span-numbers">'.$bill['bill_total'].' đ</td>
                                    <td>'.$ttdh.'</td>
                                     </tr>
                                    

@@ -64,36 +64,40 @@ function bill_chi_tiet($listbill){
   $i = 0;
   echo '
   <thead>
-  <tr class="text-center">
-    <th scope="col" >Hình</th>
-    <th scope="col">Sản Phẩm</th>
-    <th scope="col">Đơn giá</th>
-    <th scope="col">thành tiền</th>
-  </tr>
-</thead>
+    <tr class="text-center">
+      <th scope="col" >Hình</th>
+      <th scope="col">Sản Phẩm</th>
+      <th scope="col">Đơn giá</th>
+      <th scope="col">Số lượng</th>
+      <th scope="col">Thành tiền</th>
+    </tr>
+  </thead>
                         ';
-                        
-  foreach ($listbill as $cart) {
-    $image = $img_path . $cart['cart_img'];
-    $tong += $cart['cart_money'];
-
+  foreach ($_SESSION['mycart'] as $cart) {
+    $image = $img_path . $cart[2];
+    $moneyy = $cart[3] * $cart[4];
+    $tong += $moneyy;
     echo '
-            <tbody>              
-                            <tr class="text-center">
-                              <td><img class="cart-img" src="'  . $image . '" alt=""></td>
-                              <td class="align-middle">' . $cart['cart_name'] . '</td>
-                              <td class="align-middle span-numbers">' . $cart['cart_price'] . '</td>
-                              <td class="align-middle span-numbers">' . $cart['cart_money'] . '</td>
+              <tbody>            
+                            <tr class="text-center align-middle" >
+                              <td ><img src="' . $image . '" alt="" class="cart-img"></td>
+                              <td >' . $cart[1] . '</td>
+                              <td class="span-numbers">' . $cart[3] . '</td>
+                              <td >' . $cart[4] . '</td>
+                              <td class="span-numbers">' . $moneyy . '</td>
+               
                             </tr>  
+                           
                           ';
     $i += 1;
   }
   echo '
-                            <tr  >
-                            <td colspan="3" class="px-3">Tổng tiền đơn hàng</td>
-                            <td class="text-center span-numbers">' . $tong . '</td>
+                            <tr>
+                            <td colspan="4">Tổng tiền đơn hàng</td>
+                            <td class="span-numbers text-center" >' . $tong . '</td>
+                            </td>
                           </tr> 
-                          </tbody>
+                          </tbody> 
                           ';
 }
 function tongdonhang(){
