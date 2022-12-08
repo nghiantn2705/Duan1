@@ -327,7 +327,6 @@ li {
         width: 185px;
 
     }
-
     .product {
         margin-top: 50px;
         max-width: 1440px;
@@ -374,6 +373,7 @@ li {
         opacity: 0.4;
         box-shadow: -3px 0px 2px #5b666e;
         border-radius: 5px 0px 0px 5px;
+    
     }
 
     .swiper-button-prev {
@@ -417,6 +417,7 @@ li {
     .body-product {
         display: flex;
         flex-direction: column;
+       
     }
 
     .body-product .price-product {
@@ -428,17 +429,6 @@ li {
     .body-product .price-sale-product {
         font-size: 16px;
         color: #D61C4E;
-        margin-bottom: 20px;
-    }
-
-    .product-btn-cart {
-        padding: 20px 10px;
-        border: 1px solid #293462;
-        color: #fff;
-        background-color: #293462;
-        border-radius: 50px;
-        transform: translateY(81px);
-        margin-bottom: 5px;
     }
 
     .swiper-slide img {

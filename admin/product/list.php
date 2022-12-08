@@ -29,12 +29,12 @@
                             <th>Mã loại</th>
                             <th>TÊN SẢN PHẨM
                             
-                            <th>HÌNH ẢNH
+                            <th>HÌNH ẢNH</th>
                             
-                            <th>GIÁ
+                            <th>GIÁ</th>
                             
                             <th>Giảm Giá</th>
-                            <th>Size
+                            <th>Size</th>
                             
                             <th>Màu</th>
                             <th>Loại Máy</th>
@@ -53,7 +53,7 @@
                             $deletesp = "index.php?act=deletesp&product_id=".$product_id;
                             $hinhpath = "../upload/" . $product_image;
                             if (is_file($hinhpath)) {
-                                $image = "<img src='" . $hinhpath . "' height = '60px'>";
+                                $image = "<img src='" . $hinhpath . "' height = '80px'>";
                             } else {
                                 $image = "No Photo";
                             }
@@ -66,9 +66,9 @@
                                 
                                 <td><?= $image ?></td>
                                 
-                                <td><?= $product_price ?></td>
+                                <td class="span-numbers"><?= $product_price ?></td>
                                 
-                                <td><?= $product_sale ?></td>
+                                <td class="span-numbers"><?= $product_sale ?></td>
                                 <td><?= $product_size ?></td>
                                 <td><?= $product_color ?></td>
                                 <td><?= $product_type?></td>

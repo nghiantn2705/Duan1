@@ -64,6 +64,16 @@ $(document).ready(function () {
     const backdropcn = document.querySelector(".capnhap");
     backdropcn.style.display = "none"
   })
+  $(".backdrop").click(function () {
+    const backdrop = document.querySelector(".backdrop");
+    backdrop.style.display = "none";
+    const backdropcn = document.querySelector(".capnhap");
+    backdropcn.style.display = "none"
+    const backdropdk = document.querySelector(".dangky");
+    backdropdk.style.display = "none";
+    const loginuser = document.querySelector(".login-user");
+    loginuser.style.display = "none";
+  })
  
 
 
@@ -141,4 +151,8 @@ $(document).ready(function () {
     })
 }
 $(".span-numbers").digits();
+
+  const cartprice= document.querySelectorAll(".cart-price");
+  const soluong = document.querySelectorAll(".soluong-cart");
+  console.log(cartprice,soluong)
 });

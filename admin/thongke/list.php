@@ -31,9 +31,9 @@
                                 <td><?= $category_id ?></td>
                                 <td><?= $category_name ?></td>
                                 <td><?= $countsp ?></td>
-                                <td><?= $maxprice ?></td>
-                                <td><?= $minprice ?></td>
-                                <td><?= $avgprice ?></td>
+                                <td class="span-numbers"><?= $maxprice ?></td>
+                                <td class="span-numbers"><?= $minprice ?></td>
+                                <td ><?= $avgprice ?></td>
                         
                                
                             </tr>

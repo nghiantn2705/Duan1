@@ -65,7 +65,10 @@ $sql = "update products set product_category= '".$product_category."', product_n
             
 }
 
-
+function update_view($id){
+    $sql="update products set product_view=product_view+1 where product_id=$id";
+    pdo_execute($sql);
+}
 // else
 // $sql = "update sanpham set  name= '".$tensp."',  price= '".$giasp."',  img= '".$hinh."', mota= '".$mota."',iddm= '".$iddm."' where id=".$id;
 // pdo_execute($sql);
