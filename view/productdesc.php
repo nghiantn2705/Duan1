@@ -1,3 +1,7 @@
+<?php 
+    if(isset($_GET['id'])) $id=$_GET['id']; else $id=0;
+    $id=update_view($id);
+?>
 <ul class="nav-menu">
                             <?php 
                                 foreach ($dsdm as $dm) {
@@ -25,7 +29,10 @@
         <div class="product-info">
           <div class="product-name-1 fs-2"><?php echo $product['product_name']  ?></div>
         </div>
-        <div class="product-price-discount mb-2 ">Giá: <span class="span-numbers" style="color: red;"><?php echo $product['product_sale']  ?>đ</span><span class="line-through span-numbers"><?php echo $product['product_price']  ?>đ </span></div>
+        <div class="product-price-discount ">Giá: <span class="span-numbers" style="color: red;"><?php echo $product['product_sale']  ?>đ</span><span class="line-through span-numbers"><?php echo $product['product_price']  ?>đ </span></div>
+        <div class="product-view">
+          <p class=""><i class="fa-solid fa-eye"></i><span> Lượt Xem: <?php echo $product['product_view']  ?></span></p>
+        </div>
       </div>
       <div class="container border">
         <table class="table table-striped">
@@ -81,7 +88,13 @@
   <div class="product-info-tabs">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item">
-        <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="true">Bình luận ()</a>
+        <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="true">Bình luận (<?php
+        $category_id=$_GET['id'];
+        $count_cmt=count_comment($category_id);
+          foreach ($count_cmt as $tk) {
+            extract($tk);
+            echo"$count_cmt";}
+       ?>)</a>
       </li>
     </ul>
     <div class="tab-content" id="myTabContent">
@@ -136,8 +149,8 @@
           <div id="item-product">
             <a href="#" class="product-name"><?= $product_name ?></a>
             <div class="body-product">
-              <h4 class="price-product"><?= $product_price ?></h4>
-              <h4 class="price-sale-product">Giá Khuyến Mãi: <span><?= $product_sale ?></span> đ</h4>
+              <h4 class="price-product span-numbers">Giá: <?= $product_price ?>đ</h4>
+              <h4 class="price-sale-product span-numbers">Giá Khuyến Mãi: <span><?= $product_sale ?></span> đ</h4>
             </div>
           </div>
           <form action="index.php?act=addtocart" method="POST">
@@ -145,7 +158,7 @@
             <input type="text" hidden name="product_name" value="<?= $product_name ?>">
             <input type="text" hidden name="product_image" value="<?= $product_image ?>">
             <input type="number" hidden name="product_price" value="<?= $product_sale ?>">
-            <input type="submit" class="product-btn-cart" style="width:250px ;" name="addtocart" value="Mua ngay"></input>
+            <input type="submit" class="btn btn-dark" style="width:250px ;" name="addtocart" value="Mua ngay"></input>
           </form>
         </div>
         

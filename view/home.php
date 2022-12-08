@@ -44,121 +44,123 @@
 </div>
 <!--End Banner-->
 <!--Product-->
-<div class="product">
+<div class="bg-body-product">
+<div class="product ">
 
-  <div class="swiper mySwiper1 ">
-    <h3 class="">Sản Phẩm Được Xem Nhiều</h3>
-    <div class="swiper-wrapper ">
-      <?php foreach ($dstop10 as $prodcuts) {
-        extract($prodcuts);
-        $hinhpath = "upload/" . $product_image;
-        if (is_file($hinhpath)) {
-          $image = "<img src='" . $hinhpath . "' height = '300px'>";
-        } else {
-          $image = "No Photo";
-        }
-      ?>
-      <a href="index.php?act=chitiet&id=<?php echo $product_id ?>">
-        <div class="swiper-slide" id="parent-product">
-          <img src="" alt="">
-          <div><?= $image ?></div>
-          <div id="item-product">
-            <a href="index.php?act=chitiet&id=<?php echo $product_id ?>" class="product-name"><?= $product_name ?></a>
-            <div class="body-product">
-              <h4 class="price-product my-2 span-numbers">Giá: <?= $product_price ?> đ</h4>
-              <h4 class="price-sale-product">Giá Khuyến Mãi: <span class="span-numbers"><?= $product_sale ?></span> đ</h4>
-            </div>
+<div class="swiper mySwiper1 ">
+  <h3 class="">Sản Phẩm Được Xem Nhiều</h3>
+  <div class="swiper-wrapper ">
+    <?php foreach ($dstop10 as $prodcuts) {
+      extract($prodcuts);
+      $hinhpath = "upload/" . $product_image;
+      if (is_file($hinhpath)) {
+        $image = "<img src='" . $hinhpath . "' height = '300px'>";
+      } else {
+        $image = "No Photo";
+      }
+    ?>
+    <a href="index.php?act=chitiet&id=<?php echo $product_id ?>">
+      <div class="swiper-slide" id="parent-product">
+        <img src="" alt="">
+        <div><?= $image ?></div>
+        <div id="item-product">
+          <a href="index.php?act=chitiet&id=<?php echo $product_id ?>" class="product-name"><?= $product_name ?></a>
+          <div class="body-product align-items-center">
+            <h4 class="price-product my-2 span-numbers">Giá: <?= $product_price ?> đ</h4>
+            <h4 class="price-sale-product">Giá Khuyến Mãi: <span class="span-numbers"><?= $product_sale ?></span> đ</h4>
           </div>
-          <form action="index.php?act=addtocart" method="POST">
-            <input type="text" hidden name="product_id" value="<?= $product_id ?>">
-            <input type="text" hidden name="product_name" value="<?= $product_name ?>">
-            <input type="text" hidden name="product_image" value="<?= $product_image ?>">
-            <input type="number" hidden name="product_price" value="<?= $product_sale ?>">
-            <input type="submit" class="btn btn-dark" style="width:250px ;" name="addtocart" value="Mua ngay"></input>
-          </form>
         </div>
-        </a>
-      <?php } ?>
-    </div>
-    <div class="swiper-pagination"></div>
+        <form action="index.php?act=addtocart" method="POST">
+          <input type="text" hidden name="product_id" value="<?= $product_id ?>">
+          <input type="text" hidden name="product_name" value="<?= $product_name ?>">
+          <input type="text" hidden name="product_image" value="<?= $product_image ?>">
+          <input type="number" hidden name="product_price" value="<?= $product_sale ?>">
+          <input type="submit" class="btn btn-dark mt-3" style="width:250px ;" name="addtocart" value="Mua ngay"></input>
+        </form>
+      </div>
+      </a>
+    <?php } ?>
   </div>
+  <div class="swiper-pagination"></div>
+</div>
 
-  <div class="swiper mySwiper mt-4">
-    <h3>Sản Phẩm Giảm Giá Nhiều</h3>
-    <div class="swiper-wrapper">
-      <?php foreach ($dstop10sale as $prodcuts) {
-        extract($prodcuts);
-        $hinhpath = "upload/" . $product_image;
-        if (is_file($hinhpath)) {
-          $image = "<img src='" . $hinhpath . "' height = '300px'>";
-        } else {
-          $image = "No Photo";
-        }
-      ?>
-     <a href="index.php?act=chitiet&id=<?php echo $product_id ?>">
-        <div class="swiper-slide" id="parent-product">
-          <img src="" alt="">
-          <div><?= $image ?></div>
-          <div id="item-product">
-          <a href="index.php?act=chitiet&id=<?php echo $product_id ?>" class="product-name"><?= $product_name ?></a>
-            <div class="body-product">
-              <h4 class="price-product span-numbers">Giá: <?= $product_price ?> đ</h4>
-              <h4 class="price-sale-product">Giá Khuyến Mãi: <span class="span-numbers"><?= $product_sale ?></span> đ</h4>
-            </div>
+<div class="swiper mySwiper mt-4">
+  <h3>Sản Phẩm Giảm Giá Nhiều</h3>
+  <div class="swiper-wrapper">
+    <?php foreach ($dstop10sale as $prodcuts) {
+      extract($prodcuts);
+      $hinhpath = "upload/" . $product_image;
+      if (is_file($hinhpath)) {
+        $image = "<img src='" . $hinhpath . "' height = '300px'>";
+      } else {
+        $image = "No Photo";
+      }
+    ?>
+   <a href="index.php?act=chitiet&id=<?php echo $product_id ?>">
+      <div class="swiper-slide" id="parent-product">
+        <img src="" alt="">
+        <div><?= $image ?></div>
+        <div id="item-product">
+        <a href="index.php?act=chitiet&id=<?php echo $product_id ?>" class="product-name"><?= $product_name ?></a>
+          <div class="body-product">
+            <h4 class="price-product my-2 span-numbers">Giá: <?= $product_price ?> đ</h4>
+            <h4 class="price-sale-product ">Giá Khuyến Mãi: <span class="span-numbers"><?= $product_sale ?></span> đ</h4>
           </div>
-          <form action="index.php?act=addtocart" method="POST">
-            <input type="text" hidden name="product_id" value="<?= $product_id ?>">
-            <input type="text" hidden name="product_name" value="<?= $product_name ?>">
-            <input type="text" hidden name="product_image" value="<?= $product_image ?>">
-            <input type="number" hidden name="product_price" value="<?= $product_sale ?>">
-            <input type="submit" class="btn btn-dark" style="width:250px ;" name="addtocart" value="Mua ngay"></input>
-          </form>
         </div>
-        </a>
-      <?php } ?>
-    </div>
-    <div class="swiper-button-next "></div>
-    <div class="swiper-button-prev"></div>
+        <form action="index.php?act=addtocart" method="POST">
+          <input type="text" hidden name="product_id" value="<?= $product_id ?>">
+          <input type="text" hidden name="product_name" value="<?= $product_name ?>">
+          <input type="text" hidden name="product_image" value="<?= $product_image ?>">
+          <input type="number" hidden name="product_price" value="<?= $product_sale ?>">
+          <input type="submit" class="btn btn-dark mt-2" style="width:250px ;" name="addtocart" value="Mua ngay"></input>
+        </form>
+      </div>
+      </a>
+    <?php } ?>
   </div>
-  <div class="swiper mySwiper">
-    <h3>Tất cả sản phẩm</h3>
-    <div class="collapse" id="collapseExample">
-    
-      <?php foreach ($listproducts as $prodcuts) {
-        extract($prodcuts);
-        $hinhpath = "upload/" . $product_image;
-        if (is_file($hinhpath)) {
-          $image = "<img src='" . $hinhpath . "' height = '300px'>";
-        } 
-      ?>
-         
-        <div class="collapse-product" id="parent-product">
-          <img src="" alt="">
-          <a href="index.php?act=chitiet&id=<?php echo $product_id ?>"> <?= $image ?></a>
-          <div id="item-product">
-          <a href="index.php?act=chitiet&id=<?php echo $product_id ?>" class="product-name"><?= $product_name ?></a>
-            <div class="body-product">
-              <h4 class="price-product span-numbers">Giá: <?= $product_price ?> đ</h4>
-              <h4 class="price-sale-product">Giá Khuyến Mãi: <span  class="span-numbers"><?= $product_sale ?></span> đ</h4>
-            </div>
+  <div class="swiper-button-next "></div>
+  <div class="swiper-button-prev"></div>
+</div>
+<div class="swiper mySwiper">
+  <h3>Tất cả sản phẩm</h3>
+  <div class="collapse" id="collapseExample">
+  
+    <?php foreach ($listproducts as $prodcuts) {
+      extract($prodcuts);
+      $hinhpath = "upload/" . $product_image;
+      if (is_file($hinhpath)) {
+        $image = "<img src='" . $hinhpath . "' height = '300px'>";
+      } 
+    ?>
+       
+      <div class="collapse-product" id="parent-product">
+        <img src="" alt="">
+        <a href="index.php?act=chitiet&id=<?php echo $product_id ?>"> <?= $image ?></a>
+        <div id="item-product">
+        <a href="index.php?act=chitiet&id=<?php echo $product_id ?>" class="product-name"><?= $product_name ?></a>
+          <div class="body-product">
+            <h4 class="price-product span-numbers">Giá: <?= $product_price ?> đ</h4>
+            <h4 class="price-sale-product">Giá Khuyến Mãi: <span  class="span-numbers"><?= $product_sale ?></span> đ</h4>
           </div>
-          <form action="index.php?act=addtocart" method="POST">
-            <input type="text" hidden name="product_id" value="<?= $product_id ?>">
-            <input type="text" hidden name="product_name" value="<?= $product_name ?>">
-            <input type="text" hidden name="product_image" value="<?= $product_image ?>">
-            <input type="number" hidden name="product_price" value="<?= $product_sale ?>">
-            <input type="submit" class="btn btn-dark" style="width:300px ;" name="addtocart" value="Mua ngay"></input>
-          </form>
         </div>
-        
-      <?php } ?>
+        <form action="index.php?act=addtocart" method="POST">
+          <input type="text" hidden name="product_id" value="<?= $product_id ?>">
+          <input type="text" hidden name="product_name" value="<?= $product_name ?>">
+          <input type="text" hidden name="product_image" value="<?= $product_image ?>">
+          <input type="number" hidden name="product_price" value="<?= $product_sale ?>">
+          <input type="submit" class="btn btn-dark" style="width:300px ;" name="addtocart" value="Mua ngay"></input>
+        </form>
+      </div>
       
-    </div>
-    <div class="d-flex justify-content-center">
-        <a class="btn-collapse mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-          XEM THÊM
-          <i class="fa-solid fa-arrow-right"></i></a>
-    </div>
+    <?php } ?>
+    
   </div>
+  <div class="d-flex justify-content-center">
+      <a class="btn-collapse mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        XEM THÊM
+        <i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+</div>
+</div>
 </div>
 </div>

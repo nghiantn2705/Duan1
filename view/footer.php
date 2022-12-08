@@ -35,9 +35,8 @@
           <div class="row mt-3">
           
             <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-    
               <h6 class="text-uppercase fw-bold mb-4">
-                <i class="fas fa-gem me-3 text-secondary"></i>Company name
+                <i class="fas fa-gem me-3 text-secondary"></i>Wolf Watch
               </h6>
               <p>
                 Here you can use rows and columns to organize your footer content. Lorem ipsum
@@ -57,7 +56,7 @@
                   $linkdm = "index.php?act=sanpham&category_id=".$category_id; 
                                                   
                   echo '
-                  <li class="text-reset"><a href="'.$linkdm.'" id="item-drop">'.$category_name.'</a></li>
+                  <li class="text-reset"><a href="'.$linkdm.'" id="item-drop" style="color:#6c757d">'.$category_name.'</a></li>
                   ';
                   }
                   ?>
@@ -75,24 +74,6 @@
               </p> -->
             </div>
           
-            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-         
-              <h6 class="text-uppercase fw-bold mb-4">
-                Useful links
-              </h6>
-              <p>
-                <a href="#!" class="text-reset">Pricing</a>
-              </p>
-              <p>
-                <a href="#!" class="text-reset">Settings</a>
-              </p>
-              <p>
-                <a href="#!" class="text-reset">Orders</a>
-              </p>
-              <p>
-                <a href="#!" class="text-reset">Help</a>
-              </p>
-            </div>
            
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
     
@@ -121,7 +102,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
   integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-<script src="view/js/index345.js"></script>
+<script src="view/js/index123.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"

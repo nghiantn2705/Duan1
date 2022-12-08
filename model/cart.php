@@ -82,8 +82,8 @@ function bill_chi_tiet($listbill){
                             <tr class="text-center">
                               <td><img class="cart-img" src="'  . $image . '" alt=""></td>
                               <td class="align-middle">' . $cart['cart_name'] . '</td>
-                              <td class="align-middle">' . $cart['cart_price'] . '</td>
-                              <td class="align-middle">' . $cart['cart_money'] . '</td>
+                              <td class="align-middle span-numbers">' . $cart['cart_price'] . '</td>
+                              <td class="align-middle span-numbers">' . $cart['cart_money'] . '</td>
                             </tr>  
                           ';
     $i += 1;
@@ -91,7 +91,7 @@ function bill_chi_tiet($listbill){
   echo '
                             <tr  >
                             <td colspan="3" class="px-3">Tổng tiền đơn hàng</td>
-                            <td class="text-center">' . $tong . '</td>
+                            <td class="text-center span-numbers">' . $tong . '</td>
                           </tr> 
                           </tbody>
                           ';

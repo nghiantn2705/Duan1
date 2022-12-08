@@ -99,14 +99,15 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $product_price = $_POST['product_price'];
                 $amount = 1;
                 $moneyy = $amount * $product_price;
-                // var_dump($money);
-                // die();
+                
                 $productAdd = [$product_id, $product_name, $product_image, $product_price, $amount, $moneyy];
+               
+                
                 //đẩy mảng con vào mảng cha, mảng cha là session mycart, mảng con là productadd
-                array_push($_SESSION['mycart'], $productAdd);
+                array_push($_SESSION['mycart'], $productAdd);   
                 // var_dump($_SESSION['mycart']);
                 // die();
-            }
+            };
             include "view/cart.php";
             break;
         case 'deleteCart':

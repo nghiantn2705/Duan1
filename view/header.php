@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="view/css/index1.css">
+  <link rel="stylesheet" href="view/css/index143.css">
 
 </head>
 
@@ -46,7 +46,7 @@
       <div class="login-user">
 
         <?php if (isset($_SESSION['user'])) {
-          echo " <h3>Xin chào, </h3>
+          echo " <h3>Xin chào,<span class='ms-2 text-capitalize'>". $_SESSION['user'] ."</span></h3>
         <div>
         <li><a href='index.php?act=mybill'>Đơn hàng của tôi</a></li>
         <span class='' type='submit' id='btn-cn'>Cập nhập tài khoản</span>
@@ -136,9 +136,6 @@
         <img id="close2" src="view/img/item/close.png" alt="">
       </div>
     </div>
-
-    <div class="backdrop-dangky"></div>
-    <div class="backdrop-capnhap"></div>
     <div class="backdrop"></div>
     </div>
   </header>

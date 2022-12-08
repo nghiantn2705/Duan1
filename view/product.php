@@ -32,8 +32,8 @@
           <div id='item-product'>
             <a href='#' class='product-name'>" . $product_name . "</a>
             <div class='body-product'>
-              <h4 class='price-product'>" . $product_price . "</h4>
-              <h4 class='price-sale-product'>Giá Khuyến Mãi: <span>" . $product_sale . "</span> đ</h4>
+              <h4 class='price-product mt-2  span-numbers'>Giá: " . $product_price . "</h4>
+              <h4 class='price-sale-product span-numbers'>Giá Khuyến Mãi: <span>" . $product_sale . "</span> đ</h4>
             </div>
           </div>
           <form action='index.php?act=addtocart' method='POST'>
@@ -41,7 +41,7 @@
             <input type='text' hidden name='product_name' value='" . $product_name . "'>
             <input type='text' hidden name='product_image' value='" . $product_image . "'>
             <input type='number' hidden name='product_price' value='" . $product_sale . "'>
-            <input type='submit' class='product-btn-cart' style='width:250px ;' name='addtocart' value='Mua ngay'></input>
+            <input type='submit' class='btn btn-dark mt-2' style='width:250px ;' name='addtocart' value='Mua ngay'></input>
           </form>
           
         </div>
