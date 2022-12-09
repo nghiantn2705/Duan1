@@ -189,7 +189,8 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     $comment = $_POST['coment'];
                     $user = $_SESSION['user_id'];
                     $product = $_POST['id_sp'];
-                    addComent($comment,$user,$product);
+                    $vaitro=$_POST['vaitro'];
+                    addComent($comment,$user,$product,$vaitro);
                     header('location:index.php?act=chitiet&id='.$product);
                     break;   
                     
