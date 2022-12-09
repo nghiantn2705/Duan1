@@ -22,7 +22,7 @@
                 <li class="btn btn-secondary"><a href="index.php?act=list-categorys">Danh mục</a></li>
                 <li class="btn btn-secondary"><a href="index.php?act=list-products">Hàng hóa</a></li>
                 <li class="btn btn-secondary"><a href="index.php?act=list-users">Khách hàng</a></li>
-                <li class="btn btn-secondary"><a href="index.php?act=dsbl">Bình luận</a></li>
+                <li class="btn btn-secondary"><a href="index.php?act=binhluan">Bình luận</a></li>
                 <li class="btn btn-secondary"><a href="index.php?act=thongke">Thống kê</a></li>
                 <li class="btn btn-secondary"><a href="index.php?act=listbill">Danh sách đơn hàng</a></li>
             </ul>

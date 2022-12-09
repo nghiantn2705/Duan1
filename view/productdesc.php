@@ -102,7 +102,8 @@
       <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
         <?php foreach ($comment as $value) {
 
-          $query2 = "select * from users where user_id=" . $value['comment_user'];
+          if($value['comment_status']==1){
+            $query2 = "select * from users where user_id=" . $value['comment_user'];
           $user = pdo_query_one($query2);
           echo "<div class='mb-20'>
           <div class='user-cmt'>
@@ -115,6 +116,7 @@
             </div>
           </div>
         </div>";
+          }
         } ?>
         <?php
         if (isset($_SESSION['user'])) {

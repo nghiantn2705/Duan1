@@ -173,7 +173,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     session_destroy(); 
                         include "view/taikhoan/dangky.php";
                     break;
-                    case "chitiet":
+                case "chitiet":
                         $id = $_GET['id'];
                         $query = "select * from products where product_id=".$id;
                         $loadone = loadone_product($id);
