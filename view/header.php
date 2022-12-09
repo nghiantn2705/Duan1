@@ -62,6 +62,7 @@
           <div>
             <button class='btn btn-primary me-2' type='submit'>Đăng Nhập</button>
             <span class='btn btn-primary' type='submit' id='btn-dk'>Đăng ký</span>
+            <a href='index.php?act=forgot'><span>Quên mật khẩu</span></a>
           </div>
         </form>
         ";
