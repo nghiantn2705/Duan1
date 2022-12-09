@@ -127,6 +127,7 @@
             <div class='form-group' >
               <label>Bình luận của bạn</label>
               <input type='hidden' value='" . $product['product_id'] . "' name='id_sp'>
+              <input type='text' hidden value='1' name='vaitro'>
               <textarea class='form-control' rows='4' name='coment'  ></textarea>
             </div>
             <button class='round-black-btn' id='nut' >Gửi</button>

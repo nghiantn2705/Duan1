@@ -11,11 +11,13 @@ include "global.php";
 include "view/header.php";
 include "model/categorys.php";
 include "model/comment.php";
+include "model/PHPMailer/sendMail.php";
 if (!isset($_SESSION['mycart'])) $_SESSION['mycart'] = [];
 $dsdm = loadall_categorys();
 $listproducts =  loadall_product();
 $dstop10=loadall_sanphamview_top10();
 $dstop10sale=loadall_sanphamsale_top10();
+$mail = new Mailer();
 if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
@@ -189,7 +191,8 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     $comment = $_POST['coment'];
                     $user = $_SESSION['user_id'];
                     $product = $_POST['id_sp'];
-                    addComent($comment,$user,$product);
+                    $vaitro=$_POST['vaitro'];
+                    addComent($comment,$user,$product,$vaitro);
                     header('location:index.php?act=chitiet&id='.$product);
                     break;   
                     
@@ -238,6 +241,62 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                                 include "view/home.php";
                             }                
                             break;
+                            case "forgot":
+                                if (isset($_POST['send'])) {
+                                    $user = loadall_users();
+                                    $_SESSION = array();
+                                    foreach ($user as $value) {
+                                        if ($_POST['email'] == $value['user_email']) {
+                                            $check = "oke";
+                                            $_SESSION['userPass_id'] = $value['user_id'];
+                                            $email = $_POST['email'];
+                                            $code = substr(rand(0, 999999), 0, 6);
+                                            $title = "Quên mật khẩu";
+                                            $content = "Mã xác nhận của bạn là : <span>" . $code . "</span>";
+                                            $mail->sendMail($title, $content, $email);
+                                            $_SESSION['ma'] = $code;
+                                            header("location:index.php?act=code");
+                                        }
+                                    }
+                                    if (!isset($check)) {
+                                        echo "<script>alert('email của bạn chưa được đăng kí')</script>";
+                                        include "view/home.php";
+                                    }
+                                } else {
+                                    include "view/taikhoan/forgot.php";
+                                }
+                                break;
+                            case "code":
+                                include "view/taikhoan/confirm.php";
+                                break;
+                            case "confirm":
+                                // var_dump($_POST['code']);
+                                if (isset($_POST['xacnhan'])) {
+                                    if ($_SESSION['ma'] == $_POST['code']) {
+                                        include "view/taikhoan/updatePass.php";
+                                        
+                                    } else {
+                                        echo "<script>alert('Mã xác nhận sai!')</script>";
+                                        include "view/taikhoan/confirm.php";
+                                    }
+                                } else {
+                                    include "view/taikhoan/confirm.php";
+                                }
+                                break;
+                            case "updatePass":
+                              
+                                    if (strlen($_POST['passnew']) >= 8) {
+                                        if ($_POST['passnew'] == $_POST['re-passnew']) {
+                                            update_pass($_SESSION['userPass_id'], $_POST['passnew']);
+                                            echo "<script>alert('Thay đổi mật khẩu thành công')</script>";
+                                            include "view/home.php";
+                                        }
+                                    } else {
+                                        echo "<script>alert('Mật khẩu phải có độ dài lớn hơn 8 ký tự ')</script>";
+                                        include "view/taikhoan/updatePass.php";
+                                    }
+                                
+                                break;        
    
         default:
             include "view/home.php";
