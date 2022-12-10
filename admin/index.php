@@ -9,7 +9,7 @@ include "../model/timkiem.php";
 include "../model/cart.php";
 include "../model/bill.php";
 include "./header.php";
-
+include "../model/comment.php";
 // Controller
 
 if (isset($_GET['act'])) {
@@ -274,6 +274,18 @@ if (isset($_GET['act'])) {
             $listtk = loadall_tk();
             include "thongke/bieudo.php";
             break;
+        case "binhluan":
+            $list_cmt=load_comment();
+            include "comment/list_comment.php";
+            break; 
+         case "an_bl":
+            status_an($_GET['bl']);
+            header("location:index.php?act=binhluan");
+            break;  
+            case "hien_bl":
+                status_hien($_GET['bl']);
+                header("location:index.php?act=binhluan");
+                break;         
     }
 } else {
     include "./home.php";

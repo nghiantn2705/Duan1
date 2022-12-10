@@ -34,4 +34,8 @@ function checkuser($username,$password){
     $sp=pdo_query_one($sql);
     return $sp;
 }
+function update_pass($user_id,$user_pass){
+    $sql = "update users set  user_password= '".$user_pass."'  where user_id =".$user_id;
+    pdo_execute($sql);
+}
 ?>

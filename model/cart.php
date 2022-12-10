@@ -194,6 +194,7 @@ function bill_tien_momoQR(){
     $tong += $moneyy;
   }
   echo '
+  <div class="momo" style="display:none">
   <table class="table table-striped table-striped-columns table-hover table-bordered">
   <thead class="text-center">
       <tr>
@@ -210,6 +211,7 @@ function bill_tien_momoQR(){
       </tr>
   </thead>
 </table>
+</div>
 ';
 }
 

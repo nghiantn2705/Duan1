@@ -102,7 +102,8 @@
       <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
         <?php foreach ($comment as $value) {
 
-          $query2 = "select * from users where user_id=" . $value['comment_user'];
+          if($value['comment_status']==1){
+            $query2 = "select * from users where user_id=" . $value['comment_user'];
           $user = pdo_query_one($query2);
           echo "<div class='mb-20'>
           <div class='user-cmt'>
@@ -115,6 +116,7 @@
             </div>
           </div>
         </div>";
+          }
         } ?>
         <?php
         if (isset($_SESSION['user'])) {
@@ -122,15 +124,16 @@
             <div class='form-group'>
     
             </div>
-            <div class='form-group' >
-              <label>Bình luận của bạn</label>
+            <div class='form-group ' >
+              <label class='ms-2'>Bình luận của bạn</label>
               <input type='hidden' value='" . $product['product_id'] . "' name='id_sp'>
+              <input type='text' hidden value='1' name='vaitro'>
               <textarea class='form-control' rows='4' name='coment'  ></textarea>
             </div>
             <button class='round-black-btn' id='nut' >Gửi</button>
           </form>";
         } else {
-          echo "<div class='btn btn_danger bl-user'>Đăng nhập để được bình luận </div>";
+          echo "<div class='btn btn_danger bl-user'><a href='index.php?act=dangnhap'>Đăng nhập để được bình luận</a> </div>";
         }
         ?>
       </div>
