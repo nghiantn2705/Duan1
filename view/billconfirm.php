@@ -34,8 +34,6 @@
                 if($bill['bill_pttt']==0){
                     echo " Trả tiền khi nhận hàng";
                     }else if($bill['bill_pttt']==1){
-                        echo " Chuyển khoản ngân hàng";
-                    }else if($bill['bill_pttt']==2){
                         echo " Thanh toán online";
                     }
                     ?></li>
@@ -75,6 +73,7 @@
                         <table  class="table  table-striped-columns table-hover table-bordered my-3" >
                             <?php 
                                 bill_chi_tiet($billct);
+                                $_SESSION['mycart'] = [];
                             ?>
                       </table>
                       </div>

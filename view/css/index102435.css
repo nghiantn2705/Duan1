@@ -205,111 +205,6 @@ li {
         font-size: 13px;
         text-transform: capitalize;
     }
-
-    .login-user {
-        position: fixed;
-        top: 30%;
-        left: 0;
-        right: 0;
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 16px;
-        padding: 30px 30px 30px 50px;
-        width: 500px;
-        height: 350px;
-        border: 1px solid #000;
-        z-index: 10001;
-        display: none;
-        background-color: #fff;
-    }
-
-    .login-user img {
-        height: 20px;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-    }
-
-    .login-user form p {
-        font-size: 24px;
-        text-align: center;
-        margin-bottom: 10px;
-    }
-
-    .login-user form label {
-        display: block;
-        font-size: 18px;
-        margin-bottom: 10px;
-    }
-
-    .login-user form input {
-        display: block;
-        margin-bottom: 20px;
-        width: 400px;
-        height: 40px;
-        border-radius: 12px;
-        padding-left: 10px;
-        border: 1px solid #6C7A89;
-    }
-
-    .login-user form>div {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .login-user form>div a {
-        color: #fff;
-        padding: 10px 15px;
-        background-color: #59C1BD;
-        border: 1px solid #59C1BD;
-        border-radius: 6px;
-    }
-
-    #close {
-        cursor: pointer;
-        height: 20px;
-    }
-
-    .backdrop {
-        display: none;
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        opacity: 0.6;
-        background: #000000;
-        z-index: 500;
-        align-items: center;
-    }
-
-    .backdrop-dangky {
-        display: none;
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        opacity: 0.6;
-        background: #000000;
-        z-index: 501;
-        align-items: center;
-    }
-
-    .backdrop-capnhap {
-        display: none;
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        opacity: 0.6;
-        background: #000000;
-        z-index: 504;
-        align-items: center;
-    }
-
     .banner img {
         height: 500px;
     }
@@ -498,95 +393,6 @@ li {
         transform: translateY(-10px);
         transition: all 0.6s ease-in-out;
     }
-
-    .dangky {
-        display: none;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        text-transform: uppercase;
-        position: fixed;
-        top: 9%;
-        left: 0;
-        right: 0;
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 16px;
-        padding: 30px 50px 30px 50px;
-        width: 600px;
-        height: 800px;
-        border: 1px solid #000;
-        z-index: 10002;
-        background-color: #fff;
-    }
-
-    .dangky #close1 {
-        height: 20px;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        cursor: pointer;
-    }
-
-    .dangky label {
-        font-weight: 500;
-        text-transform: uppercase;
-        margin-top: 10px;
-        display: block;
-    }
-
-    .dangky input {
-        width: 100%;
-        padding-left: 10px;
-        margin: 5px 0px 10px 0px;
-        border-radius: 5px;
-        height: 40px;
-    }
-
-    .capnhap {
-        display: none;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        text-transform: uppercase;
-        position: fixed;
-        top: 9%;
-        left: 0;
-        right: 0;
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 16px;
-        padding: 30px 50px 30px 50px;
-        width: 600px;
-        height: 820px;
-        border: 1px solid #000;
-        z-index: 10002;
-        background-color: #fff;
-    }
-
-    .capnhap #close2 {
-        height: 20px;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        cursor: pointer;
-    }
-
-    .capnhap label {
-        font-weight: 500;
-        text-transform: uppercase;
-        margin-top: 10px;
-        display: block;
-    }
-
-    .capnhap input {
-        width: 100%;
-        padding-left: 10px;
-        margin: 5px 0px 10px 0px;
-        border-radius: 5px;
-        height: 40px;
-    }
-
     .cart-img {
         height: 170px;
         width: 210px;
@@ -597,12 +403,45 @@ li {
         height: 30px;
         padding-left: 10px;
     }
-
+    .user-profile{
+        display: flex;
+    }
+   
+    .user-profile-menu{
+       
+        padding: 20px;
+        
+    }
+    .user-profile-menu li{
+          
+        text-align: center;
+    }
+    .user-profile-menu li a{
+      padding: 10px;  
+      width: 100%;
+      background-color: #007aff;
+      margin-bottom:10px;
+        border-radius: 10px;
+        color: #fff;
+    }
+    .user-profile-menu li a :hover{
+        background-color: rgb(113, 202, 110);
+    }
+    
     .btn-collapse {
         border: 1px solid #000000;
         padding: 10px 80px;
         border-radius: 16px;
+        
     }
+    .form-users{
+        width: 50%;
+        border: 1px solid #a1a6aa;
+        padding: 20px;
+        border-radius: 16px;
+        box-shadow: 1px 2px 10px #a1a6aa;
+    }
+   
     .pd-wrap {
         padding: 40px 0;
         font-family: 'Poppins', sans-serif;
@@ -743,8 +582,13 @@ li {
 
     .product-dtl .form-control {
         font-size: 15px;
+        border-radius: 16px;
+        box-shadow: 1px 2px 10px #a1a6aa;
     }
-
+    .form-control{
+        border-radius: 10px;
+        box-shadow: 1px 2px 5px #a1a6aa;
+    }
     .product-dtl label {
         line-height: 16px;
         font-size: 15px;
@@ -880,7 +724,7 @@ li {
 
     .user-cmt {
         border: 1px solid #5b666e;
-        box-shadow: 1px 3px #a1a6aa;
+        box-shadow: 1px 3px 10px #a1a6aa;
         padding: 20px;
         border-radius: 16px;
         color: #000000;
@@ -906,6 +750,130 @@ li {
     }
 }
 
-@media only screen and (min-width:46.25em) and (max-width:1099px) {}
+@media only screen and (min-width:46.25em) and (max-width:1099px) {
+    body {
+        font-family: "Roboto";
+        margin: auto;
+
+    }
+
+    .header.header-active {
+        position: fixed;
+        top: 0;
+        transition: all 0.7s ease-in-out;
+        left: 0;
+        right: 0;
+        z-index: 10000;
+        background: #fff;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .nav-menu.nav-menu-active {
+        position: fixed;
+        top: 92px;
+        transition: all 0.7s ease-in-out;
+        left: 0;
+        right: 0;
+        z-index: 200;
+        background: #fff;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        border-bottom: 3px solid #6C7A89;
+    }
+
+    .nav-hotline {
+        display: none;
+    }
+    .logo img {
+        width: 140px;
+        height: 60px;
+    }
+
+    .nav-icon {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-item >form {
+        display: none;
+    }
+    .nav-item {
+        display: inline-block;
+        position: relative;
+        margin-left: 20px;
+        font-size: 18px;
+        color: #6C7A89;
+    }
+
+    .nav-item i {
+        cursor: pointer;
+    }
+
+    .nav-item input {
+        width: 280px;
+        height: 40px;
+        padding-left: 15px;
+        border-radius: 16px;
+        border: 1px solid #6C7A89;
+        font-size: 14px;
+    }
+
+    .nav-sreach {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+    }
+
+    .nav-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid #6C7A89;
+        column-gap: 10px;
+        margin: auto;
+    }
+
+    .nav-menu>li {
+        display: inline-block;
+        padding: 20px 30px;
+    }
+
+    .nav-menu>li>a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-menu>li>a>span {
+        font-size: 14px;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-left: 5px;
+    }
+
+    .menu-drop {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 148px;
+        left: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        padding: 10px 0px;
+
+        box-shadow: 0px 4px 5px #b6bdc4;
+    }
+  
+}
 
 @media only screen and (max-width:46.1875em) {}

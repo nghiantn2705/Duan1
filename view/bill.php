@@ -65,8 +65,7 @@
                             </thead>
                             <tr>
                                 <td><input type="radio" name="pttt" value="0" checked> Trả tiền khi nhận hàng</td>
-                                <td><input type="radio" name="pttt" value="1"> Chuyển khoản ngân hàng</td>
-                                <td><input type="radio" name="pttt" value="2"> Thanh toán online</td>
+                                <td><input type="radio" name="pttt" value="1"> Thanh toán online</td>
                             </tr>
                         </table>
                     </div>
@@ -106,4 +105,20 @@
 
 
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script>
+    $(document).ready(function () {
 
+$('input[type="radio"]').click(function () {
+    if ($(this).attr("value") !== "1") {
+        $(".momo").hide();
+    }
+    if ($(this).attr("value") == "1") {
+        $(".momo").show();
+
+    }
+});
+
+$('input[type="radio"]').trigger('click');  // trigger the event
+});
+</script>

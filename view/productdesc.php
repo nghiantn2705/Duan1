@@ -124,8 +124,8 @@
             <div class='form-group'>
     
             </div>
-            <div class='form-group' >
-              <label>Bình luận của bạn</label>
+            <div class='form-group ' >
+              <label class='ms-2'>Bình luận của bạn</label>
               <input type='hidden' value='" . $product['product_id'] . "' name='id_sp'>
               <input type='text' hidden value='1' name='vaitro'>
               <textarea class='form-control' rows='4' name='coment'  ></textarea>
@@ -133,7 +133,7 @@
             <button class='round-black-btn' id='nut' >Gửi</button>
           </form>";
         } else {
-          echo "<div class='btn btn_danger bl-user'>Đăng nhập để được bình luận </div>";
+          echo "<div class='btn btn_danger bl-user'><a href='index.php?act=dangnhap'>Đăng nhập để được bình luận</a> </div>";
         }
         ?>
       </div>

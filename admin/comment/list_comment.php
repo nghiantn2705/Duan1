@@ -1,6 +1,6 @@
 <div class="container">
     <div class="frmtitle my-4 text-center">
-        <h1>DANH SÁCH Bình Luận</h1>
+        <h1>Danh Sách Bình Luận</h1>
     </div>
     <div class="">
         <form action="" method="post">
