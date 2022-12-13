@@ -38,30 +38,31 @@
                         </div>
                         <div class='form-outline mb-4'>
                         <label class='form-label' for='loginPassword'>Mật khẩu</label>
-                        <input type="password" name="password" id="password" value="<?php echo $_SESSION['pass'] ?>" class='form-control' />
+                        <input type="password" name="re-password" id="password" value="<?php echo $_SESSION['pass'] ?>" class='form-control' />
                         </div>
                         <div class='form-outline mb-4'>
                             <label for="" class='form-label'>Ảnh</label>
-                            <input class='form-control' type="file" name="file" id=""required>
+                            <input type="text" hidden value="<?php echo $_SESSION['anh'] ?>" name="anhcu" >
+                            <input class='form-control' type="file" name="file" id="">
                         </div>
                         <div class='form-outline mb-4'>
                             <label for="" class='form-label'>Địa chỉ</label>
-                            <input class='form-control' type="text" name="adr" id="diachi"required>
+                            <input class='form-control' type="text" name="adr" id="diachi"required value="<?php echo $_SESSION['diachi'] ?>" >
                         </div>
                         <div class='form-outline mb-4'>
                             <label for="" class='form-label'>Số điện thoại</label>
-                            <input class='form-control' type="phone" name="phone" id="phone"required>
+                            <input class='form-control' type="phone" name="phone" id="phone"required value="<?php echo $_SESSION['sdt'] ?>" >
                         </div>
                         <div class='form-outline mb-4'>
                             <label for="" class='form-label'>Email</label>
-                            <input class='form-control' type="email" name="email" id="email"required>
+                            <input class='form-control' type="email" name="email" id="email"required value="<?php echo $_SESSION['email'] ?>" >
                         </div>
                         <div class='form-outline mb-4'>
                             <input class='form-control' type="hidden" name="vaitro"value="0">
                         </div>
                        
                         <div class='text-center'>
-                        <button type='submit' class='btn btn-primary btn-block mb-4'>Đăng Nhập</button>
+                        <button type='submit' class='btn btn-primary btn-block mb-4' name="capnhat">Cập nhật</button>
                         </div>
                     </form>
                 </div>

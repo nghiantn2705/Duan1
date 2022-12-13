@@ -83,23 +83,25 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     echo "<script>
                 alert('Tài khoản không tồn tại.');
              </script>";
-                    include "view/home.php";
+                    include "view/taikhoan/dangnhap.php";
                 }
             } else {
                 include "view/taikhoan/dangnhap.php";
             }
             break;
         case "updateUser":
-            $anh = $_SESSION['anh'];
+            
             if (isset($_POST['capnhat'])) {
                 if (strlen($_POST['password']) >= 8) {
-                    if ($_POST['password'] == $_POST['re-pass']) {
+                    if ($_POST['password'] == $_POST['re-password']) {
                         if ($_FILES['file']['name'] == "") {
                             $image = $_POST['anhcu'];
                         } else {
                             $image = $_FILES['file']['name'];
                         }
                         update_users($_SESSION['user_id'], $_POST['username'], $_POST['password'], $image, $_POST['adr'], $_POST['phone'], $_POST['email']);
+                        $_SESSION['user']=$_POST['username'];
+                        $_SESSION['anh']=$image;
                         echo "<script>
                             alert('Cập nhật thành công');
                          </script>";
@@ -109,13 +111,13 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                         echo "<script>
                                 alert('Re-password không trùng khớp so với passwword ');
                              </script>";
-                        include "view/home.php";
+                        include "view/taikhoan/updateUser.php";
                     }
                 } else {
                     echo "<script>
                         alert('Password phải có độ dài lớn hơn 8 ký tự');
                      </script>";
-                    include "view/home.php";
+                    include "view/taikhoan/updateUser.php";
                 }
             } else {
 
@@ -299,7 +301,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 }
                 if (!isset($check)) {
                     echo "<script>alert('email của bạn chưa được đăng kí')</script>";
-                    include "view/home.php";
+                    include "view/taikhoan/forgot.php";
                 }
             } else {
                 include "view/taikhoan/forgot.php";
